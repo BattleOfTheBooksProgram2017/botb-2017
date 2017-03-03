@@ -1,2 +1,2 @@
-# botb-2017
-The battle of the books repo
+# capstone2017
+Battle of Books project

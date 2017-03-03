@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Question: MyString
+  BookID: 
+  TeamID: 
+  CreatedBy: 
+  CreatedAt: 2017-03-03
+  UpadtedBy: 
+  UpdatedAt: 2017-03-03
+
+two:
+  Question: MyString
+  BookID: 
+  TeamID: 
+  CreatedBy: 
+  CreatedAt: 2017-03-03
+  UpadtedBy: 
+  UpdatedAt: 2017-03-03

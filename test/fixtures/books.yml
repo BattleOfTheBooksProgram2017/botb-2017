@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Name: MyString
+  Author: MyString
+  Genre: MyString
+  CoverImage: MyString
+  YearID: 
+  LevelID: 
+
+two:
+  Name: MyString
+  Author: MyString
+  Genre: MyString
+  CoverImage: MyString
+  YearID: 
+  LevelID: 

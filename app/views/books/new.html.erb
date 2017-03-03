@@ -1,0 +1,43 @@
+<h1>New Book</h1>
+
+
+<%= form_for :book do |f| %>
+
+
+
+    <p>
+      <%= f.label :Name %><br>
+      <%= f.text_field :Name %>
+    </p>
+
+    <p>
+      <%= f.label :Author %><br>
+      <%= f.text_area :Author %>
+    </p>
+
+
+    <p>
+      <%= f.label :Genre %><br>
+      <%= f.text_area :Genre %>
+    </p>
+
+    <p>
+      <%= f.label :CoverImage %><br>
+      <%= f.text_area :CoverImage %>
+    </p>
+
+    <p>
+      <%= f.label :YearID %><br>
+      <%= f.text_area :YearID %>
+    </p>
+
+    <p>
+      <%= f.label :LevelID %><br>
+      <%= f.text_area :LevelID %>
+    </p>
+
+
+<% end %>
+<%= render 'form', book: @book %>
+
+<%= link_to 'Back', books_path %>
