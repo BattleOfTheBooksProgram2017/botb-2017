@@ -17,10 +17,11 @@ ActiveRecord::Schema.define(version: 20170303143307) do
     t.string   "Author"
     t.string   "Genre"
     t.string   "CoverImage"
+    t.text     "Details",    limit: 65535
     t.integer  "YearID"
     t.integer  "LevelID"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
   end
 
   create_table "levels", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
