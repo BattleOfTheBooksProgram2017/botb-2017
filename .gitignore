@@ -17,3 +17,6 @@
 .byebug_history
 
 .idea
+
+# ignore database.yml because of the mysql socket is different on Cloud9
+/config/database.yml

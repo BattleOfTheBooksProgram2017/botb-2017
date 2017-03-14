@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   resources :teams
   resources :years
   resources :roles
+  resources :users
   resources :levels
 end
