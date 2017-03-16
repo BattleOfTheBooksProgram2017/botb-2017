@@ -22,13 +22,8 @@
   </div>
 
   <div class="field">
-    <%= f.label :Email %>
-    <%= f.text_field :Email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :Password %>
-    <%= f.text_field :Password %>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
   </div>
 
   <div class="field">
@@ -39,6 +34,11 @@
   <div class="field">
     <%= f.label :RoleID %>
     <%= f.number_field :RoleID %>
+  </div>
+
+  <div class="field">
+    <%= f.label :admin %>
+    <%= f.check_box :admin %>
   </div>
 
   <div class="actions">

@@ -11,13 +11,8 @@
 </p>
 
 <p>
-  <strong>Email:</strong>
-  <%= @user.Email %>
-</p>
-
-<p>
-  <strong>Password:</strong>
-  <%= @user.Password %>
+  <strong>email:</strong>
+  <%= @user.email %>
 </p>
 
 <p>
@@ -28,6 +23,11 @@
 <p>
   <strong>Roleid:</strong>
   <%= @user.RoleID %>
+</p>
+
+<p>
+  <strong>Admin:</strong>
+  <%= @user.admin %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %> |

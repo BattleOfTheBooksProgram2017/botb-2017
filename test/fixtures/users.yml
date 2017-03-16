@@ -3,15 +3,13 @@
 one:
   Name: MyString
   UserName: MyString
-  Email: MyString
-  Password: MyString
+  email: MyString
   TeamID: 1
   RoleID: 1
 
 two:
   Name: MyString
   UserName: MyString
-  Email: MyString
-  Password: MyString
+  email: MyString
   TeamID: 1
   RoleID: 1
