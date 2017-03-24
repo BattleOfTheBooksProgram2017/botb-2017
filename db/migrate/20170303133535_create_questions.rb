@@ -4,10 +4,8 @@ class CreateQuestions < ActiveRecord::Migration[5.0]
       t.text :Question
       t.integer :BookID
       t.integer :TeamID
-      t.integer :CreatedBy
-      t.date :CreatedAt
-      t.integer :UpadtedBy
-      t.date :UpdatedAt
+      t.integer :createdBy
+      t.integer :updatedBy
 
       t.timestamps
     end

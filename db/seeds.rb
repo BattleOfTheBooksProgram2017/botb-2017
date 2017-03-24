@@ -12,12 +12,12 @@ Role.create(Title: 'Student')
 Role.create(Title: 'Coach')
 Role.create(Title: 'Admin')
 
+Level.create(LevelName: 'Junior High')
+#Level.create(LevelName: 'Elementary')
+
 Team.create(Name: 'Wildcats', School: 'Clayton Park Junior High')
 Team.create(Name: 'Lions', School: 'Fairview Junior High')
 #Team.create(Name: 'D\'uc Danville', School: 'D\'uc Danville')
-
-Level.create(LevelName: 'Junior High')
-#Level.create(LevelName: 'Elementary')
 
 Year.create(Year: 2018)
 Year.create(Year: 2017)
