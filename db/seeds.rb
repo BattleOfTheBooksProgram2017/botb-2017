@@ -15,15 +15,15 @@ Role.create(Title: 'Admin')
 Level.create(LevelName: 'Junior High')
 #Level.create(LevelName: 'Elementary')
 
-Team.create(Name: 'Wildcats', School: 'Clayton Park Junior High')
-Team.create(Name: 'Lions', School: 'Fairview Junior High')
+Team.create(Name: 'Wildcats', School: 'Clayton Park Junior High', LevelID: 1)
+Team.create(Name: 'Lions', School: 'Fairview Junior High', LevelID: 1)
 #Team.create(Name: 'D\'uc Danville', School: 'D\'uc Danville')
 
 Year.create(Year: 2018)
 Year.create(Year: 2017)
 Year.create(Year: 2016)
 
-#Book.create(Name: 'something', Author: 'someone', Genre: 'genred', CoverImage: 'http://sdsds', Details: 'This book is about', YearID: 2, LevelID: 1)
+#Book.create(Title: 'something', Author: 'someone', Genre: 'genred', CoverImage: 'http://sdsds', Details: 'This book is about', YearID: 2, LevelID: 1)
 
 #Question.create(Question: 'sjdsj', BookId: 1, TeamId: 2, CreatedBy: 3, UpdatedBy: 3)
 

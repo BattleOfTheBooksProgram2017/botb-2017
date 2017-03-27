@@ -3267,3 +3267,179 @@ Processing by Devise::SessionsController#new as HTML
 Completed 200 OK in 16ms (Views: 15.0ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (737.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (181.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('6486152018385621645', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateBooks (20170303133225)
+  [1m[35m (459.1ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (30.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303133225')[0m
+  [1m[35m (100.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestions (20170303133535)
+  [1m[35m (396.9ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (8.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (16.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303133535')[0m
+  [1m[35m (75.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20170303143114)
+  [1m[35m (540.6ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143114')[0m
+  [1m[35m (63.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateYears (20170303143152)
+  [1m[35m (649.7ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143152')[0m
+  [1m[35m (160.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRoles (20170303143215)
+  [1m[35m (540.2ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (7.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143215')[0m
+  [1m[35m (48.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLevels (20170303143232)
+  [1m[35m (448.9ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143232')[0m
+  [1m[35m (34.0ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170316172453)
+  [1m[35m (631.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316172453')[0m
+  [1m[35m (70.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20170316174103)
+  [1m[35m (1749.9ms)[0m  [1m[35mALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (708.9ms)[0m  [1m[35mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (961.4ms)[0m  [1m[35mALTER TABLE `users` ADD `reset_password_sent_at` datetime[0m
+  [1m[35m (881.4ms)[0m  [1m[35mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (1097.4ms)[0m  [1m[35mALTER TABLE `users` ADD `sign_in_count` int DEFAULT 0 NOT NULL[0m
+  [1m[35m (2855.0ms)[0m  [1m[35mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (1182.9ms)[0m  [1m[35mALTER TABLE `users` ADD `last_sign_in_at` datetime[0m
+  [1m[35m (1363.2ms)[0m  [1m[35mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (966.2ms)[0m  [1m[35mALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)[0m
+  [1m[35m (521.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (705.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (11.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (34.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316174103')[0m
+  [1m[35m (159.6ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdmins (20170316214159)
+  [1m[35m (598.5ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (770.5ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_email`  ON `admins` (`email`) [0m
+  [1m[35m (697.9ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_reset_password_token`  ON `admins` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316214159')[0m
+  [1m[35m (110.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20170316214718)
+  [1m[35m (1203.1ms)[0m  [1m[35mALTER TABLE `users` ADD `admin` tinyint(1)[0m
+  [1m[35m (5.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316214718')[0m
+  [1m[35m (149.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-03-27 11:28:02', '2017-03-27 11:28:02')[0m
+  [1m[35m (148.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('6486152018385621645')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (152.3ms)[0m  [1m[35mSHOW CREATE TABLE `admins`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'admins'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `books`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'books'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `levels`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'levels'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `questions`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'questions'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `teams`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'teams'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `years`[0m
+  [1m[35m (543.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (388.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT GET_LOCK('6486152018385621645', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateBooks (20170303133225)
+  [1m[35m (458.0ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303133225')[0m
+  [1m[35m (85.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateQuestions (20170303133535)
+  [1m[35m (340.4ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303133535')[0m
+  [1m[35m (83.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateTeams (20170303143114)
+  [1m[35m (399.6ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `Level` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143114')[0m
+  [1m[35m (44.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateYears (20170303143152)
+  [1m[35m (1378.2ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143152')[0m
+  [1m[35m (68.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateRoles (20170303143215)
+  [1m[35m (637.2ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143215')[0m
+  [1m[35m (170.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateLevels (20170303143232)
+  [1m[35m (546.9ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170303143232')[0m
+  [1m[35m (54.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateUsers (20170316172453)
+  [1m[35m (317.9ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316172453')[0m
+  [1m[35m (52.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddDeviseToUsers (20170316174103)
+  [1m[35m (1302.1ms)[0m  [1m[35mALTER TABLE `users` ADD `encrypted_password` varchar(255) DEFAULT '' NOT NULL[0m
+  [1m[35m (1201.1ms)[0m  [1m[35mALTER TABLE `users` ADD `reset_password_token` varchar(255)[0m
+  [1m[35m (860.2ms)[0m  [1m[35mALTER TABLE `users` ADD `reset_password_sent_at` datetime[0m
+  [1m[35m (800.0ms)[0m  [1m[35mALTER TABLE `users` ADD `remember_created_at` datetime[0m
+  [1m[35m (1133.0ms)[0m  [1m[35mALTER TABLE `users` ADD `sign_in_count` int DEFAULT 0 NOT NULL[0m
+  [1m[35m (1090.6ms)[0m  [1m[35mALTER TABLE `users` ADD `current_sign_in_at` datetime[0m
+  [1m[35m (1656.6ms)[0m  [1m[35mALTER TABLE `users` ADD `last_sign_in_at` datetime[0m
+  [1m[35m (1425.9ms)[0m  [1m[35mALTER TABLE `users` ADD `current_sign_in_ip` varchar(255)[0m
+  [1m[35m (1186.8ms)[0m  [1m[35mALTER TABLE `users` ADD `last_sign_in_ip` varchar(255)[0m
+  [1m[35m (653.1ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (1700.3ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) [0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316174103')[0m
+  [1m[35m (83.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to DeviseCreateAdmins (20170316214159)
+  [1m[35m (849.1ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (645.0ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_email`  ON `admins` (`email`) [0m
+  [1m[35m (598.8ms)[0m  [1m[35mCREATE UNIQUE INDEX `index_admins_on_reset_password_token`  ON `admins` (`reset_password_token`) [0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316214159')[0m
+  [1m[35m (40.2ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20170316214718)
+  [1m[35m (1308.4ms)[0m  [1m[35mALTER TABLE `users` ADD `admin` tinyint(1)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170316214718')[0m
+  [1m[35m (50.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-03-27 11:29:11', '2017-03-27 11:29:11')[0m
+  [1m[35m (139.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT RELEASE_LOCK('6486152018385621645')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `admins`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'admins'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `books`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'books'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `levels`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'levels'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `questions`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'questions'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.6ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `teams`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'teams'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.2ms)[0m  [1m[35mSHOW CREATE TABLE `years`[0m
