@@ -12,6 +12,16 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
+    <nav>
+      <ul>
+        <li><%= link_to('Home', root_path) %></li>
+        <li><%= link_to('About', home_about_path) %></li>
+        <li><%= link_to('Contact', home_contact_path) %></li>
+        <li><%= link_to('Books', books_path) %></li>
+        <li><%= link_to('Questions', questions_path) %></li>
+      </ul>
+    </nav>
+
     <div class="container">
     <%= yield %>
       <% if user_signed_in? %>
