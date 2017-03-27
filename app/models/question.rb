@@ -1,8 +1,7 @@
 class Question < ApplicationRecord
 
   #via looking at year.rb
-  self.table_name = "Questions"
-  self.primary_key = "QuestionID"
+  #self.table_name = "questions"
 
   #belongs_to :employee, :class_name => 'Employee', :foreign_key => :ReportsTo
   belongs_to :book, :class_name => 'Book', :foreign_key => :BookId

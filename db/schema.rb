@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 20170316214718) do
   create_table "teams", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "Name"
     t.string   "School"
-    t.integer  "Level"
+    t.integer  "LevelID"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

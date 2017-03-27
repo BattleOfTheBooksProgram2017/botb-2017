@@ -3536,3 +3536,450 @@ Migrating to AddAdminToUsers (20170316214718)
   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-03-27 12:08:04', '2017-03-27 12:08:04')[0m
   [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (25.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-03-27 14:34:10', '2017-03-27 14:34:10')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-03-27 14:34:10', '2017-03-27 14:34:10')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-03-27 14:34:10', '2017-03-27 14:34:10')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-03-27 14:35:40', '2017-03-27 14:35:40')[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (29.8ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-03-27 14:35:40', '2017-03-27 14:35:40')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-03-27 14:35:40', '2017-03-27 14:35:40')[0m
+  [1m[35m (14.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (264.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS `capstone2017`[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (62.9ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (58.9ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `Level` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (25.9ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (19.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (1.2ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20170316214718)[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20170303143152),
+(20170303143215),
+(20170303143232),
+(20170316172453),
+(20170316174103),
+(20170316214159),
+(20170303133535),
+(20170303133225),
+(20170303143114);
+
+[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-03-27 14:36:44', '2017-03-27 14:36:44')[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (8.2ms)[0m  [1m[35mDROP TABLE `admins` CASCADE[0m
+  [1m[35m (45.1ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE `books` CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (6.2ms)[0m  [1m[35mDROP TABLE `levels` CASCADE[0m
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE `questions` CASCADE[0m
+  [1m[35m (27.7ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE `roles` CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE `teams` CASCADE[0m
+  [1m[35m (12.0ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `Level` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE `users` CASCADE[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.3ms)[0m  [1m[35mDROP TABLE `years` CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-03-27 14:36:44', '2017-03-27 14:36:44')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-03-27 14:36:44', '2017-03-27 14:36:44')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-03-27 14:36:44', '2017-03-27 14:36:44')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Teen', '2017-03-27 14:36:44', '2017-03-27 14:36:44')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Elementary', '2017-03-27 14:36:44', '2017-03-27 14:36:44')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (58.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `capstone2017`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.6ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (15.0ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20170316214718)[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20170303143152),
+(20170303143215),
+(20170303143232),
+(20170316172453),
+(20170316174103),
+(20170316214159),
+(20170303133535),
+(20170303133225),
+(20170303143114);
+
+[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-03-27 14:37:10', '2017-03-27 14:37:10')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE `admins` CASCADE[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.9ms)[0m  [1m[35mDROP TABLE `books` CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE `levels` CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.2ms)[0m  [1m[35mDROP TABLE `questions` CASCADE[0m
+  [1m[35m (26.8ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE `roles` CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE `teams` CASCADE[0m
+  [1m[35m (6.5ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE `users` CASCADE[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.8ms)[0m  [1m[35mDROP TABLE `years` CASCADE[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-03-27 14:37:11', '2017-03-27 14:37:11')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-03-27 14:37:11', '2017-03-27 14:37:11')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-03-27 14:37:11', '2017-03-27 14:37:11')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Teen', '2017-03-27 14:37:11', '2017-03-27 14:37:11')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Elementary', '2017-03-27 14:37:11', '2017-03-27 14:37:11')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Wildcats', 'Clayton Park Junior High', 1, '2017-03-27 14:37:11', '2017-03-27 14:37:11')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Lions', 'Fairview Junior High', 1, '2017-03-27 14:37:11', '2017-03-27 14:37:11')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (50.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS `capstone2017`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (17.6ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (13.7ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (34.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (18.4ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20170316214718)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20170303143152),
+(20170303143215),
+(20170303143232),
+(20170316172453),
+(20170316174103),
+(20170316214159),
+(20170303133535),
+(20170303133225),
+(20170303143114);
+
+[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE `admins` CASCADE[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE `books` CASCADE[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.7ms)[0m  [1m[35mDROP TABLE `levels` CASCADE[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.1ms)[0m  [1m[35mDROP TABLE `questions` CASCADE[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE `roles` CASCADE[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.5ms)[0m  [1m[35mDROP TABLE `teams` CASCADE[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.4ms)[0m  [1m[35mDROP TABLE `users` CASCADE[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE `years` CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Teen', '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Elementary', '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Wildcats', 'Clayton Park Junior High', 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Lions', 'Fairview Junior High', 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2018, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2017, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2016, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Wrath and the Dawn', 'Renee Ahdieh', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anya\'s War', 'Andrea Alban', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Me and Earl and the Dying Girl', 'Jesse Andrews', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Mosquitoland', 'David Arnold', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Night Gardener', 'Jonathan Auxier', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Queen', 'Victoria Aveyard', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Law of Loving Others', 'Kate Axelrod', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Hill', 'Karen Bass', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Nowhere Wild', 'Joe Beernink', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Witch Hunter', 'Virginia Boecker', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Away Running', 'Luc Bouchard and David Wright', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Scorpion Rules', 'Erin Bow', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Time of Dragon Moon', 'Janet Lee Carey', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Sight Unseen', 'David Carroll', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Wolf', 'Jennifer Dance', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Exquisite Captive', 'Heather Demetrios', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Material Girls', 'Elaine Dimopoulos', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Salvage', 'Alexandrea Duncan', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Court of Fives', 'Kate Elliott', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Accident Season', 'Moira Fowley-Doyle', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Girl at Midnight', 'Melissa Grey', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Swish', 'Dawn Green', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Magonia', 'Maria Dahvana Headley', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Horse Girl', 'Kay Honeyman', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Girl Defective', 'Simmone Howell', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('What We Hide', 'Marthe Jocelyn', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Going Over', 'Beth Kephart', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Grandmaster', 'Davis Klass', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Secrets', 'James Klise', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Getting Stared At', 'Laura Langston', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Under a Painted Sky', 'Stacey Lee', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Wish', 'Amber Lough', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Egg and Spoon', 'Gregory Maguire', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Vanishing Girls', 'Lauren Oliver', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anatomy of a Misfit', 'Andrea Portes', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Numbers', 'David Poulsen', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Snow Like Ashes', 'Sara Raasch', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Boy in the Black Suit', 'Jason Reynolds', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Bodies We Wear', 'Jeyn Roberts', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Bone Gap', 'Laura Ruby', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Blackthorn Key', 'Kevin Sands', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Challenger Deep', 'Neal Shusterman', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Are You Experienced', 'Jordan Sonnenblick', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Walls Around Us', 'Nova Ren Suma', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Dogs', 'Allan Stratton', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('An Ember in the Ashes', 'Sabaa Tahir', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Trouble is a Friend of Mine', 'Stephanie Tromly', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Fire Colour One', 'Jenny Valentine', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Like Water on Stone', 'Dana Walrath', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Black Dove, White Raven', 'Elizabeth Wein', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Afterworlds', 'Scott Westerfeld', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Diamond Boy', 'Michael Williams', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Cure for Dreaming', 'Cat Winters', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Belzhar', 'Meg Wolitzer', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Museum of Intangible Things', 'Wendy Wunder', 'TEEN', 'a', 'book', 2, 1, '2017-03-27 14:37:38', '2017-03-27 14:37:38')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
