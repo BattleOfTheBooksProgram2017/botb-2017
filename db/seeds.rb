@@ -79,7 +79,7 @@ Book.create(Title: "The Cure for Dreaming", Author: "Cat Winters", Genre: "TEEN"
 Book.create(Title: "Belzhar", Author: "Meg Wolitzer", Genre: "TEEN", CoverImage: "a", Details: "book", YearID: 2, LevelID: 1)
 Book.create(Title: "The Museum of Intangible Things", Author: "Wendy Wunder", Genre: "TEEN", CoverImage: "a", Details: "book", YearID: 2, LevelID: 1)
 
-#Question.create(Question: 'sjdsj', BookId: 1, TeamId: 2, CreatedBy: 3, UpdatedBy: 3)
+#Question.create(Question: 'sjdsj', BookID: 1, TeamID: 2, CreatedBy: 3, UpdatedBy: 3)
 
 # create_table "admins", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=latin1" do |t|
 #   t.string   "email",                  default: "", null: false
