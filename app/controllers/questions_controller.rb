@@ -26,6 +26,11 @@ class QuestionsController < ApplicationController
   def create
     @question = Question.new(question_params)
 
+    #@question.book = Book.find(params[:BookID])
+    #@question.team = Team.find(params.fetch(:TeamID))
+
+    #render :json => params.to_json
+
     respond_to do |format|
       if @question.save
         format.html { redirect_to @question, notice: 'Question was successfully created.' }
@@ -69,7 +74,6 @@ class QuestionsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
-      #params.fetch(:question, {})
-      params.permit(:Question, :BookID, :TeamID, :createdBy, :updatedBy)
+      params.require(:question).permit(:Question, :BookID, :TeamID, :createdBy, :updatedBy)
     end
 end
