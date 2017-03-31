@@ -7,11 +7,13 @@
     <tr>
       <th colspan="3"></th>
     </tr>
+    <tr>Level:</tr>
   </thead>
 
   <tbody>
     <% @levels.each do |level| %>
       <tr>
+        <td><%= level.LevelName %></td>
         <td><%= link_to 'Show', level %></td>
         <td><%= link_to 'Edit', edit_level_path(level) %></td>
         <td><%= link_to 'Destroy', level, method: :delete, data: { confirm: 'Are you sure?' } %></td>

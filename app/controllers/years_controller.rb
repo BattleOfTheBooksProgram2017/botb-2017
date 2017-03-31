@@ -69,6 +69,7 @@ class YearsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def year_params
-      params.fetch(:year, {})
+    #  params.fetch(:year, {})
+      params.require(:year).permit(:Year)
     end
 end
