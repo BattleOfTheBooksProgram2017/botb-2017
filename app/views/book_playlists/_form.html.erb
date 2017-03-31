@@ -1,0 +1,17 @@
+<%= form_for(book_playlist) do |f| %>
+  <% if book_playlist.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(book_playlist.errors.count, "error") %> prohibited this book_playlist from being saved:</h2>
+
+      <ul>
+      <% book_playlist.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

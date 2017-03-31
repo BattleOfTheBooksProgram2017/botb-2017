@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Book Playlist:</strong>
+  <%= @book_playlist.playlist%>
+</p>
+<p>
+  <strong>Book:</strong>
+  <%= @book_playlist.book%>
+</p>
+
+<%= link_to 'Edit', edit_book_playlist_path(@book_playlist) %> |
+<%= link_to 'Back', book_playlists_path %>

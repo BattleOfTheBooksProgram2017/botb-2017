@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Book Playlists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @book_playlists.each do |book_playlist| %>
+      <tr>
+        <td><%= link_to 'Show', book_playlist %></td>
+        <td><%= link_to 'Edit', edit_book_playlist_path(book_playlist) %></td>
+        <td><%= link_to 'Destroy', book_playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Book Playlist', new_book_playlist_path %>

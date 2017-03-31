@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :book_playlists
+  resources :playlists
   get 'home/index'
 
   get 'home/about'
