@@ -1,3 +1,5 @@
+<!--#Question.create(Question: 'sjdsj', BookID: 1, TeamID: 2, CreatedBy: 3, UpdatedBy: 3)-->
+
 <%= form_for(question) do |f| %>
   <% if question.errors.any? %>
     <div id="error_explanation">
@@ -10,6 +12,31 @@
       </ul>
     </div>
   <% end %>
+
+    <div class="field">
+      <%= f.label :Question %>
+      <%= f.text_field :Question %>
+    </div>
+
+    <div class="field">
+      <%= f.label :BookID %>
+      <%= f.text_field :BookID %>
+    </div>
+
+    <div class="field">
+      <%= f.label :TeamID %>
+      <%= f.text_field :TeamID %>
+    </div>
+
+    <div class="field">
+      <%= f.label :createdBy %>
+      <%= f.text_field :createdBy %>
+    </div>
+
+    <div class="field">
+      <%= f.label :updatedBy %>
+      <%= f.text_field :updatedBy %>
+    </div>
 
   <div class="actions">
     <%= f.submit %>

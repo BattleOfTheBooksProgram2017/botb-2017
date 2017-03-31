@@ -11,6 +11,36 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= f.label :Name %>
+    <%= f.text_field :Name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :UserName %>
+    <%= f.text_field :UserName %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :TeamID %>
+    <%= f.number_field :TeamID %>
+  </div>
+
+  <div class="field">
+    <%= f.label :RoleID %>
+    <%= f.number_field :RoleID %>
+  </div>
+
+  <div class="field">
+    <%= f.label :admin %>
+    <%= f.check_box :admin %>
+  </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
