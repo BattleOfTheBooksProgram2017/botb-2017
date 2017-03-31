@@ -1,5 +1,11 @@
 <h1>New Year</h1>
-
+<%= form_for :year do |f| %>
 <%= render 'form', year: @year %>
+
+<p>
+  <%= f.label :Year %><br>
+  <%= f.text_field :Year %>
+</p>
+<% end %>
 
 <%= link_to 'Back', years_path %>
