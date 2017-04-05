@@ -6092,3 +6092,1041 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 3791ms (Views: 3764.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-05 19:44:58 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (62.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.0.2) lib/active_record/migration.rb:573:in `check_pending!'
+activerecord (5.0.2) lib/active_record/migration.rb:549:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.2) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.2) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.2) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.2) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.4.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.4.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.4.0) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.2) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.2) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.2) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.1) lib/rack/method_override.rb:22:in `call'
+rack (2.0.1) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.2) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.2) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.1) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.2) lib/rails/engine.rb:522:in `call'
+puma (3.7.1) lib/puma/configuration.rb:232:in `call'
+puma (3.7.1) lib/puma/server.rb:578:in `handle_request'
+puma (3.7.1) lib/puma/server.rb:415:in `process_client'
+puma (3.7.1) lib/puma/server.rb:275:in `block in run'
+puma (3.7.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.1ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.7ms)
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT DATABASE() as db[0m
+  [1m[35m (20.9ms)[0m  [1m[34mSELECT GET_LOCK('6486152018385621645', 0);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreatePlaylists (20170331170706)
+  [1m[35m (160.8ms)[0m  [1m[35mCREATE TABLE `playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (3.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170331170706')[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateBookPlaylists (20170331171107)
+  [1m[35m (41.2ms)[0m  [1m[35mCREATE TABLE `book_playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `schema_migrations` (`version`) VALUES ('20170331171107')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (16.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT RELEASE_LOCK('6486152018385621645')[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSHOW CREATE TABLE `admins`[0m
+  [1m[35m (1.1ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'admins'[0m
+  [1m[35m (0.1ms)[0m  [1m[35mSHOW CREATE TABLE `book_playlists`[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `books`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'books'[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `levels`[0m
+  [1m[35m (1.5ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'levels'[0m
+  [1m[35m (0.3ms)[0m  [1m[35mSHOW CREATE TABLE `playlists`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mSHOW CREATE TABLE `questions`[0m
+  [1m[35m (0.9ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'questions'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `roles`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'roles'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `teams`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'teams'[0m
+  [1m[35m (0.5ms)[0m  [1m[35mSHOW CREATE TABLE `users`[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW TABLE STATUS LIKE 'users'[0m
+  [1m[35m (0.7ms)[0m  [1m[35mSHOW CREATE TABLE `years`[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (225.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS `capstone2017`[0m
+  [1m[35m (16.8ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (28.2ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (22.7ms)[0m  [1m[35mCREATE TABLE `book_playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (28.9ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (22.2ms)[0m  [1m[35mCREATE TABLE `playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (21.1ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (17.4ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (37.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (21.6ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (19.0ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (3.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20170331171107)[0m
+  [1m[35m (3.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20170303143152),
+(20170303143215),
+(20170303143232),
+(20170316174103),
+(20170316214159),
+(20170316214718),
+(20170303133535),
+(20170303143114),
+(20170303133225),
+(20170316172453),
+(20170331170706);
+
+[0m
+  [1m[35m (19.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-04-05 22:45:32', '2017-04-05 22:45:32')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (8.1ms)[0m  [1m[35mDROP TABLE `admins` CASCADE[0m
+  [1m[35m (57.0ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.3ms)[0m  [1m[35mDROP TABLE `book_playlists` CASCADE[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE `book_playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.7ms)[0m  [1m[35mDROP TABLE `books` CASCADE[0m
+  [1m[35m (17.7ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.8ms)[0m  [1m[35mDROP TABLE `levels` CASCADE[0m
+  [1m[35m (17.9ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.6ms)[0m  [1m[35mDROP TABLE `playlists` CASCADE[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE `playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (6.8ms)[0m  [1m[35mDROP TABLE `questions` CASCADE[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.9ms)[0m  [1m[35mDROP TABLE `roles` CASCADE[0m
+  [1m[35m (22.4ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.1ms)[0m  [1m[35mDROP TABLE `teams` CASCADE[0m
+  [1m[35m (29.4ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (9.5ms)[0m  [1m[35mDROP TABLE `users` CASCADE[0m
+  [1m[35m (22.1ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `admin` tinyint(1), UNIQUE INDEX `index_users_on_email` USING btree (`email`), UNIQUE INDEX `index_users_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.7ms)[0m  [1m[35mDROP TABLE `years` CASCADE[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Teen', '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Elementary', '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Wildcats', 'Clayton Park Junior High', 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Lions', 'Fairview Junior High', 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2018, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2017, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2016, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Wrath and the Dawn', 'Renee Ahdieh', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anya\'s War', 'Andrea Alban', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Me and Earl and the Dying Girl', 'Jesse Andrews', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Mosquitoland', 'David Arnold', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Night Gardener', 'Jonathan Auxier', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Queen', 'Victoria Aveyard', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Law of Loving Others', 'Kate Axelrod', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Hill', 'Karen Bass', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Nowhere Wild', 'Joe Beernink', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Witch Hunter', 'Virginia Boecker', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Away Running', 'Luc Bouchard and David Wright', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Scorpion Rules', 'Erin Bow', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Time of Dragon Moon', 'Janet Lee Carey', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Sight Unseen', 'David Carroll', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Wolf', 'Jennifer Dance', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Exquisite Captive', 'Heather Demetrios', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Material Girls', 'Elaine Dimopoulos', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Salvage', 'Alexandrea Duncan', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Court of Fives', 'Kate Elliott', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Accident Season', 'Moira Fowley-Doyle', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Girl at Midnight', 'Melissa Grey', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Swish', 'Dawn Green', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Magonia', 'Maria Dahvana Headley', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Horse Girl', 'Kay Honeyman', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Girl Defective', 'Simmone Howell', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('What We Hide', 'Marthe Jocelyn', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Going Over', 'Beth Kephart', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Grandmaster', 'Davis Klass', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Secrets', 'James Klise', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Getting Stared At', 'Laura Langston', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Under a Painted Sky', 'Stacey Lee', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Wish', 'Amber Lough', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Egg and Spoon', 'Gregory Maguire', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (5.1ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Vanishing Girls', 'Lauren Oliver', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anatomy of a Misfit', 'Andrea Portes', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Numbers', 'David Poulsen', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Snow Like Ashes', 'Sara Raasch', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Boy in the Black Suit', 'Jason Reynolds', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Bodies We Wear', 'Jeyn Roberts', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Bone Gap', 'Laura Ruby', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Blackthorn Key', 'Kevin Sands', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Challenger Deep', 'Neal Shusterman', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Are You Experienced', 'Jordan Sonnenblick', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Walls Around Us', 'Nova Ren Suma', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Dogs', 'Allan Stratton', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('An Ember in the Ashes', 'Sabaa Tahir', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Trouble is a Friend of Mine', 'Stephanie Tromly', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Fire Colour One', 'Jenny Valentine', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Like Water on Stone', 'Dana Walrath', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Black Dove, White Raven', 'Elizabeth Wein', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Afterworlds', 'Scott Westerfeld', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Diamond Boy', 'Michael Williams', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Cure for Dreaming', 'Cat Winters', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Belzhar', 'Meg Wolitzer', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Museum of Intangible Things', 'Wendy Wunder', 'TEEN', 'a', 'book', 2, 1, '2017-04-05 22:45:33', '2017-04-05 22:45:33')[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (30.3ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for 127.0.0.1 at 2017-04-05 19:48:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 1864ms (Views: 1843.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-05 19:48:38 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (6.5ms)
+Completed 200 OK in 75ms (Views: 71.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2017-04-05 19:48:39 -0300
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (17.2ms)
+  Rendered users/new.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 86ms (Views: 68.5ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-05 19:48:57 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"FJVnX48Fs2sWO4GeqD8nTMyv3p0DOB/NCb5+ErZ0LrnhrtjTHiBQ8tTekQzTkM1YExhTnsT5dT6Q88Yi1DBE1A==", "user"=>{"Name"=>"Laura Nelson", "UserName"=>"lowercase", "email"=>"W0291149@nscc.ca", "TeamID"=>"2", "RoleID"=>"1", "admin"=>"1"}, "commit"=>"Create User"}
+Unpermitted parameters: Name, UserName, TeamID, RoleID, admin
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (17.6ms)
+Completed 200 OK in 99ms (Views: 74.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users" for 127.0.0.1 at 2017-04-05 19:49:05 -0300
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YUFixHTpxVJmmFEl22fElwzOV81jim2Y8GIv9KYQ9RUJdKQib1PRpOsD6I1EYutH17QC0CUkvFszSJR5jMfgmw==", "user"=>{"email"=>"w0291149@nscc.ca", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'w0291149@nscc.ca' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO `users` (`email`, `created_at`, `updated_at`, `encrypted_password`) VALUES ('w0291149@nscc.ca', '2017-04-05 22:49:05', '2017-04-05 22:49:05', '$2a$11$nbAy588TotRlHSTBfgSJaeGpCc.w8/t2O5bZyAwaTDUMgB1NbqKL.')[0m
+  [1m[35m (3.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE `users` SET `sign_in_count` = 1, `current_sign_in_at` = '2017-04-05 22:49:05', `last_sign_in_at` = '2017-04-05 22:49:05', `current_sign_in_ip` = '127.0.0.1', `last_sign_in_ip` = '127.0.0.1' WHERE `users`.`id` = 1[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 184ms (ActiveRecord: 10.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-05 19:49:05 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 65ms (Views: 63.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-05 19:49:36 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 200 OK in 58ms (Views: 56.2ms | ActiveRecord: 1.0ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-04-05 19:49:37 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"3znpP9tIpDUqfs/+KwUlfcngYm1BeCchgzlJAFHtAMW3DC/ZwPKww6fldla0AAqtEpo3cAfW9uJAE/KNezoVSw=="}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-05 19:49:37 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 52ms (Views: 50.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:50:34 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  Rendered questions/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 446ms (Views: 419.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/questions/new" for 127.0.0.1 at 2017-04-05 19:50:36 -0300
+Processing by QuestionsController#new as HTML
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/_form.html.erb (17.1ms)
+  Rendered questions/new.html.erb within layouts/application (18.4ms)
+Completed 200 OK in 78ms (Views: 69.1ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2017-04-05 19:50:46 -0300
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"AzipTlJ8XlXB8XgP6hSNZA+wKoivvMxV2SqjQQTJJqPZ4H87iAm7eDY1b0zo++J0NIajDANc076HQeOHREOf7g==", "question"=>{"Question"=>"Name the book where there are two kinds of people: Reds and Silvers", "BookID"=>"6", "TeamID"=>"2", "createdBy"=>"1", "updatedBy"=>"1"}, "commit"=>"Create Question"}
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where there are two kinds of people: Reds and Silvers', 6, 2, 1, 1, '2017-04-05 22:50:47', '2017-04-05 22:50:47')[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 71ms (ActiveRecord: 13.0ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 19:50:47 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 53ms (Views: 50.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:50:48 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  Rendered questions/index.html.erb within layouts/application (12.1ms)
+Completed 500 Internal Server Error in 15ms (ActiveRecord: 0.8ms)
+
+
+  
+ActionView::Template::Error (undefined method `Book' for #<Question:0x007fe19d0ab410>
+Did you mean?  book
+               book=):
+    22:       <tr>
+    23:         <td><%= question.id %></td>
+    24:         <td><%= question.Question %></td>
+    25:         <td><%= question.Book.Title %></td>
+    26:         <td><%= question.Team.Name %></td>
+    27:         <td><%= question.created_at %></td>
+    28:         <td><%= question.updated_at %></td>
+  
+app/views/questions/index.html.erb:25:in `block in _app_views_questions_index_html_erb__1956731279652444126_70302984850520'
+app/views/questions/index.html.erb:21:in `_app_views_questions_index_html_erb__1956731279652444126_70302984850520'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.7ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (24.1ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:51:39 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (wrong argument type Symbol (expected Module)):
+  
+app/controllers/questions_controller.rb:7:in `index'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.6ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:51:51 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (wrong argument type Symbol (expected Module)):
+  
+app/controllers/questions_controller.rb:7:in `index'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (5.3ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.2ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.6ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:52:30 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuestionsController#index as HTML
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+
+  
+TypeError (wrong argument type Symbol (expected Module)):
+  
+app/controllers/questions_controller.rb:7:in `include'
+app/controllers/questions_controller.rb:7:in `index'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.5ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (33.2ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:53:00 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (66.2ms)
+Completed 500 Internal Server Error in 74ms (ActiveRecord: 5.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `Team' for #<Question:0x007f2415301cf0>
+Did you mean?  team
+               team=):
+    23:         <td><%= question.id %></td>
+    24:         <td><%= question.Question %></td>
+    25:         <td><%= question.book.Title %></td>
+    26:         <td><%= question.Team.Name %></td>
+    27:         <td><%= question.created_at %></td>
+    28:         <td><%= question.updated_at %></td>
+    29:         <td><%= link_to 'Show', question %></td>
+  
+app/views/questions/index.html.erb:26:in `block in _app_views_questions_index_html_erb___2172767772998165525_69896475754820'
+app/views/questions/index.html.erb:21:in `_app_views_questions_index_html_erb___2172767772998165525_69896475754820'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.9ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:53:07 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (22.1ms)
+Completed 200 OK in 340ms (Views: 334.8ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:54:13 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (1.0ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (39.5ms)
+Completed 200 OK in 93ms (Views: 84.7ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:54:39 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (6.6ms)
+Completed 200 OK in 59ms (Views: 55.7ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:54:48 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (1.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (9.4ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.6ms)
+
+
+  
+ActionView::Template::Error (undefined method `Name' for 1:Fixnum):
+    27:         <td><%= question.team.Name %></td>
+    28:         <td><%= question.created_at %></td>
+    29:         <td><%= question.updated_at %></td>
+    30:         <td><%= question.createdBy.Name %></td>
+    31:         <td><%= link_to 'Show', question %></td>
+    32:         <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    33:         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/questions/index.html.erb:30:in `block in _app_views_questions_index_html_erb___2172767772998165525_69895996077820'
+app/views/questions/index.html.erb:22:in `_app_views_questions_index_html_erb___2172767772998165525_69895996077820'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.5ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (22.5ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:54:57 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (7.0ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    27:         <td><%= question.team.Name %></td>
+    28:         <td><%= question.created_at %></td>
+    29:         <td><%= question.updated_at %></td>
+    30:         <td><%= question.createdBy.name %></td>
+    31:         <td><%= link_to 'Show', question %></td>
+    32:         <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    33:         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/questions/index.html.erb:30:in `block in _app_views_questions_index_html_erb___2172767772998165525_69895932009840'
+app/views/questions/index.html.erb:22:in `_app_views_questions_index_html_erb___2172767772998165525_69895932009840'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.2ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.9ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (23.6ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:54:58 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.5ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (8.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for 1:Fixnum):
+    27:         <td><%= question.team.Name %></td>
+    28:         <td><%= question.created_at %></td>
+    29:         <td><%= question.updated_at %></td>
+    30:         <td><%= question.createdBy.name %></td>
+    31:         <td><%= link_to 'Show', question %></td>
+    32:         <td><%= link_to 'Edit', edit_question_path(question) %></td>
+    33:         <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  
+app/views/questions/index.html.erb:30:in `block in _app_views_questions_index_html_erb___2172767772998165525_69896041866500'
+app/views/questions/index.html.erb:22:in `_app_views_questions_index_html_erb___2172767772998165525_69896041866500'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.7ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (28.0ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:55:13 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 58ms (Views: 55.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:55:24 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 76ms (Views: 71.4ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 19:55:28 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 52ms (Views: 48.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 19:55:30 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 65ms (Views: 61.2ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:01:45 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (73.4ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:01:45 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (3.8ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (39.8ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (52.5ms)
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:01:46 -0300
+Completed 200 OK in 721ms (Views: 685.8ms | ActiveRecord: 8.5ms)
+
+
+Completed 200 OK in 330ms (Views: 275.5ms | ActiveRecord: 44.0ms)
+
+
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (9.8ms)
+Completed 200 OK in 86ms (Views: 82.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:01:49 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  Rendering questions/show.html.erb within layouts/application
+  Rendered questions/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 62ms (Views: 58.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:05:58 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (8.5ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.2ms)
+
+
+  
+ActionView::Template::Error (undefined method `Name' for 1:Fixnum):
+    3: <h1><%= @question.Question %></h1>
+    4: <h3><%= @question.book.Title %></h3>
+    5: <h5><%= @question.book.Author %></h5>
+    6: <p>Created By: <%= @createdBy.Name %></p>
+    7: <p>Created At: <%= @question.created_at %></p>
+    8: <p>Updated At: <%= @question.updated_at %></p>
+    9: 
+  
+app/views/questions/show.html.erb:6:in `_app_views_questions_show_html_erb___3304627156300310719_70078096314580'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (16.2ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.1ms)
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:06:05 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 96ms (Views: 92.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:06:41 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (17.4ms)
+Completed 200 OK in 123ms (Views: 75.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:06:42 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.7ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 71ms (Views: 65.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:06:50 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 64ms (Views: 60.2ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:07:03 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (1.1ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 85ms (Views: 77.4ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:07:18 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 89ms (Views: 83.5ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/questions/1/edit" for 127.0.0.1 at 2017-04-05 20:07:20 -0300
+Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.9ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  Rendering questions/edit.html.erb within layouts/application
+  Rendered questions/_form.html.erb (21.9ms)
+  Rendered questions/edit.html.erb within layouts/application (23.5ms)
+Completed 200 OK in 102ms (Views: 97.7ms | ActiveRecord: 0.9ms)
+
+
+Started PATCH "/questions/1" for 127.0.0.1 at 2017-04-05 20:07:25 -0300
+Processing by QuestionsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"d0mHcWAx+bYFOJfAZAnG+389j/OAZCEHJz5TtHpBZb528gaF20WFHX8Ab0TFcaGkKPnoF3eS3kUCaC+mzy58Sw==", "question"=>{"Question"=>"Name the book where there are two kinds of people: Reds and Silvers", "BookID"=>"2", "TeamID"=>"2", "createdBy"=>"1", "updatedBy"=>"1"}, "commit"=>"Update Question", "id"=>"1"}
+  [1m[36mQuestion Load (0.4ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE `questions` SET `BookID` = 2, `updated_at` = '2017-04-05 23:07:25' WHERE `questions`.`id` = 1[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/questions/1
+Completed 302 Found in 26ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/questions/1" for 127.0.0.1 at 2017-04-05 20:07:25 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.5ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 70ms (Views: 65.4ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:07:27 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.9ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  [1m[36mTeam Load (0.9ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (10.5ms)
+Completed 200 OK in 82ms (Views: 77.3ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/questions/1/edit" for 127.0.0.1 at 2017-04-05 20:07:29 -0300
+Processing by QuestionsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  Rendering questions/edit.html.erb within layouts/application
+  Rendered questions/_form.html.erb (4.1ms)
+  Rendered questions/edit.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 80ms (Views: 76.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:07:32 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.3ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.7ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 2 LIMIT 1[0m
+  [1m[36mTeam Load (0.7ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 91ms (Views: 88.1ms | ActiveRecord: 1.7ms)
+
+
+Started DELETE "/questions/1" for 127.0.0.1 at 2017-04-05 20:07:34 -0300
+Processing by QuestionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"SymF6YFm8ylJYcmB5tKQbI2GDdcCPmfrANC6YkMl5WvXvsDb97ZpwPrIEoly6grMsuetORYUHPU0NYfic2FBTQ==", "id"=>"1"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM `questions` WHERE `questions`.`id` = 1[0m
+  [1m[35m (25.8ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/questions
+Completed 302 Found in 32ms (ActiveRecord: 27.3ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:07:34 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  Rendered questions/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 117ms (Views: 114.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/questions/new" for 127.0.0.1 at 2017-04-05 20:07:37 -0300
+Processing by QuestionsController#new as HTML
+  Rendering questions/new.html.erb within layouts/application
+  Rendered questions/_form.html.erb (7.4ms)
+  Rendered questions/new.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 118ms (Views: 114.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/questions" for 127.0.0.1 at 2017-04-05 20:07:45 -0300
+Processing by QuestionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rR8N8CL6SqlLcRiUQgJmaq3xjI9NQDWdJUFY59GQzrp3x9uF+I+vhLy1D9dA7Ql6lscFC+GgKnZ7KhghkRp39w==", "question"=>{"Question"=>"Name the book where there are two kinds of people: Reds and Silvers", "BookID"=>"6", "TeamID"=>"2", "createdBy"=>"1", "updatedBy"=>"1"}, "commit"=>"Create Question"}
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.6ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where there are two kinds of people: Reds and Silvers', 6, 2, 1, 1, '2017-04-05 23:07:45', '2017-04-05 23:07:45')[0m
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/questions/2
+Completed 302 Found in 16ms (ActiveRecord: 5.4ms)
+
+
+Started GET "/questions/2" for 127.0.0.1 at 2017-04-05 20:07:45 -0300
+Processing by QuestionsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mQuestion Load (0.8ms)[0m  [1m[34mSELECT  `questions`.* FROM `questions` WHERE `questions`.`id` = 2 LIMIT 1[0m
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering questions/show.html.erb within layouts/application
+  [1m[36mBook Load (0.8ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  Rendered questions/show.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 72ms (Views: 67.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-05 20:07:46 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (0.6ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (1.0ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.8ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 2.3ms)
+
+

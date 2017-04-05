@@ -10,6 +10,8 @@ class QuestionsController < ApplicationController
   # GET /questions/1
   # GET /questions/1.json
   def show
+    @createdBy = User.find(@question.createdBy)
+    @updatedBy = User.find(@question.updatedBy)
   end
 
   # GET /questions/new

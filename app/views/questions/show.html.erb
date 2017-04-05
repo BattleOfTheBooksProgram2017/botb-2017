@@ -1,4 +1,12 @@
 <p id="notice"><%= notice %></p>
 
+<h1><%= @question.Question %></h1>
+<h3><%= @question.book.Title %></h3>
+<h5><%= @question.book.Author %></h5>
+<p>Created By: <%= @createdBy.Name %></p>
+<p>Created At: <%= @question.created_at %></p>
+<p>Updated By: <%= @updatedBy.Name %></p>
+<p>Updated At: <%= @question.updated_at %></p>
+
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>
