@@ -6,6 +6,7 @@ one:
   email: MyString
   TeamID: 1
   RoleID: 1
+  password: MyString
 
 two:
   Name: MyString
@@ -13,3 +14,4 @@ two:
   email: MyString
   TeamID: 1
   RoleID: 1
+  password: MyString
