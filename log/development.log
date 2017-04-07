@@ -10051,3 +10051,244 @@ Processing by UsersController#index as HTML
 Completed 200 OK in 66ms (Views: 63.9ms | ActiveRecord: 0.2ms)
 
 
+Started GET "/" for 10.240.1.15 at 2017-04-07 17:51:49 +0000
+Cannot render console from 10.240.1.15! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 314ms (Views: 304.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/roles" for 10.240.0.69 at 2017-04-07 17:51:52 +0000
+Cannot render console from 10.240.0.69! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (10.4ms)
+Completed 200 OK in 106ms (Views: 98.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/roles/new" for 10.240.1.64 at 2017-04-07 17:51:54 +0000
+Cannot render console from 10.240.1.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#new as HTML
+  Rendering roles/new.html.erb within layouts/application
+  Rendered roles/_form.html.erb (29.4ms)
+  Rendered roles/new.html.erb within layouts/application (31.1ms)
+Completed 200 OK in 213ms (Views: 211.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/roles" for 10.240.1.64 at 2017-04-07 17:51:58 +0000
+Cannot render console from 10.240.1.64! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CC0RJVv6/mMhsPZPUAlMS/DLuTE1+AOmaoq8XU9ipL6fz45pgTdeLEnWJqccv4q8i5PNmYdJJMPC8KNEHDOvkQ==", "role"=>{"Title"=>"test"}, "commit"=>"Create Role"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('test', '2017-04-07 17:51:58', '2017-04-07 17:51:58')[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://rails-tutorial-w0275891.c9users.io:8080/roles/4
+Completed 302 Found in 13ms (ActiveRecord: 8.0ms)
+
+
+Started GET "/roles/4" for 10.240.0.186 at 2017-04-07 17:51:58 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 4 LIMIT 1[0m
+  Rendering roles/show.html.erb within layouts/application
+  Rendered roles/show.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 188ms (Views: 180.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roles" for 10.240.0.241 at 2017-04-07 17:52:00 +0000
+Cannot render console from 10.240.0.241! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 128ms (Views: 125.9ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/roles/4" for 10.240.0.179 at 2017-04-07 17:52:03 +0000
+Cannot render console from 10.240.0.179! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"j90S+6Mo7c/f2h+CHAIp8NoIu7oKsxQQqU3vd/1SbWhmcRUiofo57U4RzcHic82fDb+hgZIL6Q8Wc6uiPF90EQ==", "id"=>"4"}
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT  `roles`.* FROM `roles` WHERE `roles`.`id` = 4 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `roles` WHERE `roles`.`id` = 4[0m
+  [1m[35m (3.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://rails-tutorial-w0275891.c9users.io:8080/roles
+Completed 302 Found in 7ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/roles" for 10.240.0.186 at 2017-04-07 17:52:03 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 54ms (Views: 52.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/teams" for 10.240.0.187 at 2017-04-07 17:52:13 +0000
+Cannot render console from 10.240.0.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT `teams`.* FROM `teams`[0m
+  Rendered teams/index.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 188ms (Views: 183.7ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/teams/new" for 10.240.0.241 at 2017-04-07 17:52:15 +0000
+Cannot render console from 10.240.0.241! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TeamsController#new as HTML
+  Rendering teams/new.html.erb within layouts/application
+  Rendered teams/_form.html.erb (2.6ms)
+  Rendered teams/new.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 68ms (Views: 65.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/teams" for 10.240.0.186 at 2017-04-07 17:52:28 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TeamsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sXSBWGYpGp7+46EYo5w/mF7i9XNZ4GfK6dIBNapb2R1PRvMd1RVW5RB48GfANXUxANSejjzVocmAgPq547v1dA==", "team"=>{"Name"=>"new team", "School"=>"new school"}, "commit"=>"Create Team"}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `created_at`, `updated_at`) VALUES ('new team', 'new school', '2017-04-07 17:52:28', '2017-04-07 17:52:28')[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://rails-tutorial-w0275891.c9users.io:8080/teams/4
+Completed 302 Found in 10ms (ActiveRecord: 5.8ms)
+
+
+Started GET "/teams/4" for 10.240.0.186 at 2017-04-07 17:52:28 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TeamsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mTeam Load (90.4ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 4 LIMIT 1[0m
+  Rendering teams/show.html.erb within layouts/application
+  Rendered teams/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 139ms (Views: 45.6ms | ActiveRecord: 90.4ms)
+
+
+Started GET "/teams" for 10.240.0.186 at 2017-04-07 17:52:30 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.4ms)[0m  [1m[34mSELECT `teams`.* FROM `teams`[0m
+  Rendered teams/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 57ms (Views: 54.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roles" for 10.240.1.17 at 2017-04-07 17:52:39 +0000
+Cannot render console from 10.240.1.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 61ms (Views: 59.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/roles" for 10.240.1.19 at 2017-04-07 17:55:47 +0000
+Cannot render console from 10.240.1.19! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.2ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (15.3ms)
+Completed 200 OK in 419ms (Views: 401.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users" for 10.240.1.19 at 2017-04-07 17:55:51 +0000
+Cannot render console from 10.240.1.19! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 130ms (Views: 119.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/new" for 10.240.0.187 at 2017-04-07 17:55:53 +0000
+Cannot render console from 10.240.0.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (36.2ms)
+  Rendered users/new.html.erb within layouts/application (38.9ms)
+Completed 200 OK in 119ms (Views: 116.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users" for 10.240.1.19 at 2017-04-07 17:55:58 +0000
+Cannot render console from 10.240.1.19! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 75ms (Views: 73.2ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/users/6" for 10.240.0.207 at 2017-04-07 17:56:04 +0000
+Cannot render console from 10.240.0.207! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#destroy as HTML
+  Parameters: {"authenticity_token"=>"b510a83bVu4nDKDgrZgnMoytBExsMJG87B1VWiqF5x+GMXOyzwmCzLbHcqNT6cNdWxoed/SIbKNTIxGP64j+Zg==", "id"=>"6"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 6 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM `users` WHERE `users`.`id` = 6[0m
+  [1m[35m (3.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://rails-tutorial-w0275891.c9users.io:8080/users
+Completed 302 Found in 12ms (ActiveRecord: 4.2ms)
+
+
+Started GET "/users" for 10.240.1.20 at 2017-04-07 17:56:05 +0000
+Cannot render console from 10.240.1.20! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 97ms (Views: 50.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users/new" for 10.240.0.187 at 2017-04-07 17:56:07 +0000
+Cannot render console from 10.240.0.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#new as HTML
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/_form.html.erb (3.5ms)
+  Rendered users/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 181ms (Views: 179.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for 10.240.0.186 at 2017-04-07 17:56:24 +0000
+Cannot render console from 10.240.0.186! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"yAcw+S2ey3pAtMyvmi0L6bYDA/O80lGk5AVbqxkjkJT1KP60xYBMnAMvil/pbZZNX/lHvR1kOUkYdw4/ZB3TfQ==", "user"=>{"Name"=>"test", "UserName"=>"newguy", "email"=>"newguy@newmail.com", "TeamID"=>"1", "RoleID"=>"1", "password"=>"[FILTERED]"}, "commit"=>"Create User"}
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('test', 'newguy', 'newguy@newmail.com', 1, 1, 'password', '2017-04-07 17:56:24', '2017-04-07 17:56:24')[0m
+  [1m[35m (3.6ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://rails-tutorial-w0275891.c9users.io:8080/users/7
+Completed 302 Found in 11ms (ActiveRecord: 6.1ms)
+
+
+Started GET "/users/7" for 10.240.1.17 at 2017-04-07 17:56:24 +0000
+Cannot render console from 10.240.1.17! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 7 LIMIT 1[0m
+  Rendering users/show.html.erb within layouts/application
+  Rendered users/show.html.erb within layouts/application (1.1ms)
+Completed 200 OK in 54ms (Views: 51.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/users" for 10.240.0.187 at 2017-04-07 17:56:26 +0000
+Cannot render console from 10.240.0.187! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 65ms (Views: 63.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teams" for 10.240.0.110 at 2017-04-07 17:56:32 +0000
+Cannot render console from 10.240.0.110! Allowed networks: 127.0.0.1, ::1, 127.0.0.0/127.255.255.255
+Processing by TeamsController#index as HTML
+  Rendering teams/index.html.erb within layouts/application
+  [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT `teams`.* FROM `teams`[0m
+  Rendered teams/index.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 69ms (Views: 63.8ms | ActiveRecord: 1.3ms)
+
+
