@@ -7449,3 +7449,12 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.0ms)
 
 
+Started GET "/books" for 127.0.0.1 at 2017-04-07 13:49:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 337ms (Views: 315.5ms | ActiveRecord: 1.5ms)
+
+
