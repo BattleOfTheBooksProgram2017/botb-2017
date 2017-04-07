@@ -7130,3 +7130,322 @@ Processing by QuestionsController#index as HTML
 Completed 200 OK in 80ms (Views: 75.6ms | ActiveRecord: 2.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-04-07 12:49:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (12.5ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 2033ms (Views: 1999.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-07 12:49:17 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 71ms (Views: 69.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/about" for 127.0.0.1 at 2017-04-07 12:49:19 -0300
+Processing by HomeController#about as HTML
+  Rendering home/about.html.erb within layouts/application
+  Rendered home/about.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 45ms (Views: 39.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/contact" for 127.0.0.1 at 2017-04-07 12:49:20 -0300
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.erb within layouts/application
+  Rendered home/contact.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 43ms (Views: 40.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:49:22 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (33.9ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (70.4ms)
+Completed 500 Internal Server Error in 151ms (ActiveRecord: 35.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `Name' for #<Book:0x007f6bf5eabc18>):
+    12:   <tbody>
+    13:     <% @books.each do |book| %>
+    14:       <tr>
+    15:         <td><%= book.Name %></td>
+    16:         <td><%= book.Author %></td>
+    17:         <td><%= book.Genre %></td>
+    18:         <td><%= book.CoverImage %></td>
+  
+app/views/books/index.html.erb:15:in `block in _app_views_books_index_html_erb___397626777718166698_70050831953080'
+app/views/books/index.html.erb:13:in `_app_views_books_index_html_erb___397626777718166698_70050831953080'
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (2.8ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.6ms)
+  Rendering /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/inet2005/.rbenv/versions/2.3.1/lib/ruby/gems/2.3.0/gems/actionpack-5.0.2/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (48.0ms)
+Started GET "/home/contact" for 127.0.0.1 at 2017-04-07 12:49:27 -0300
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.erb within layouts/application
+  Rendered home/contact.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 43ms (Views: 42.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/contact" for 127.0.0.1 at 2017-04-07 12:50:32 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.erb within layouts/application
+  Rendered home/contact.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 345ms (Views: 331.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/home/contact" for 127.0.0.1 at 2017-04-07 12:50:32 -0300
+Processing by HomeController#contact as HTML
+  Rendering home/contact.html.erb within layouts/application
+  Rendered home/contact.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 34ms (Views: 33.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:50:34 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 57ms (Views: 47.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-04-07 12:50:36 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.6ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 62ms (Views: 47.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:50:37 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (19.9ms)
+Completed 200 OK in 63ms (Views: 61.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1" for 127.0.0.1 at 2017-04-07 12:50:49 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 42ms (Views: 39.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:50:51 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 48ms (Views: 46.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books/1/edit" for 127.0.0.1 at 2017-04-07 12:50:52 -0300
+Processing by BooksController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 1 LIMIT 1[0m
+  Rendering books/edit.html.erb within layouts/application
+  Rendered books/_form.html.erb (146.3ms)
+  Rendered books/edit.html.erb within layouts/application (147.4ms)
+Completed 200 OK in 216ms (Views: 186.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:50:56 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 54ms (Views: 51.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/new" for 127.0.0.1 at 2017-04-07 12:51:08 -0300
+Processing by BooksController#new as HTML
+  Rendering books/new.html.erb within layouts/application
+  Rendered books/_form.html.erb (2.5ms)
+  Rendered books/new.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 64ms (Views: 36.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for 127.0.0.1 at 2017-04-07 12:51:28 -0300
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vTHWXCFUGaOZ+qJy+YHSpiJ31sMBGszRtERjBbq3uAodLXxqbP5n3rd6fqB+4ozXUcJXsrR8lfVIW6MUtvIl+w==", "book"=>{"Title"=>"TEST", "Author"=>"TEST", "Genre"=>"TEST", "CoverImage"=>"TEST", "Details"=>"TEST", "YearID"=>"2", "LevelID"=>"2"}, "commit"=>"Create Book"}
+Unpermitted parameter: Title
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT  `years`.* FROM `years` WHERE `years`.`id` = 2 LIMIT 1[0m
+  [1m[36mLevel Load (0.2ms)[0m  [1m[34mSELECT  `levels`.* FROM `levels` WHERE `levels`.`id` = 2 LIMIT 1[0m
+  [1m[35mSQL (42.2ms)[0m  [1m[32mINSERT INTO `books` (`Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('TEST', 'TEST', 'TEST', 'TEST', 2, 2, '2017-04-07 15:51:28', '2017-04-07 15:51:28')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books/56
+Completed 302 Found in 163ms (ActiveRecord: 96.9ms)
+
+
+Started GET "/books/56" for 127.0.0.1 at 2017-04-07 12:51:28 -0300
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"56"}
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 56 LIMIT 1[0m
+  Rendering books/show.html.erb within layouts/application
+  Rendered books/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:51:30 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 45ms (Views: 43.1ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/books/56" for 127.0.0.1 at 2017-04-07 12:51:39 -0300
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"xLQSljSCH1STzA05nhfrgu0Ar7LBiYPMQIAc0YBQhCGhMLpcRhwpJo8VWyNFFcslqD/bn3DX2ZhEUrrUBDGYGA==", "id"=>"56"}
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 56 LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[31mDELETE FROM `books` WHERE `books`.`id` = 56[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 5ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:51:39 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 46ms (Views: 44.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:51:45 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 50ms (Views: 48.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/levels" for 127.0.0.1 at 2017-04-07 12:51:46 -0300
+Processing by LevelsController#index as HTML
+  Rendering levels/index.html.erb within layouts/application
+  [1m[36mLevel Load (0.3ms)[0m  [1m[34mSELECT `levels`.* FROM `levels`[0m
+  Rendered levels/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 42ms (Views: 30.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-04-07 12:51:48 -0300
+Processing by TeamsController#index as HTML
+Completed 401 Unauthorized in 27ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-04-07 12:51:48 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (39.0ms)
+Completed 200 OK in 119ms (Views: 80.5ms | ActiveRecord: 12.5ms)
+
+
+Started GET "/roles" for 127.0.0.1 at 2017-04-07 12:51:50 -0300
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (20.9ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (27.1ms)
+Completed 200 OK in 95ms (Views: 44.7ms | ActiveRecord: 22.2ms)
+
+
+Started GET "/years" for 127.0.0.1 at 2017-04-07 12:51:51 -0300
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.3ms)[0m  [1m[34mSELECT `years`.* FROM `years`[0m
+  Rendered years/index.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 47ms (Views: 33.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-07 12:51:53 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 79ms (Views: 56.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/questions" for 127.0.0.1 at 2017-04-07 12:51:55 -0300
+Processing by QuestionsController#index as HTML
+  Rendering questions/index.html.erb within layouts/application
+  [1m[36mQuestion Load (16.8ms)[0m  [1m[34mSELECT `questions`.* FROM `questions`[0m
+  [1m[36mBook Load (0.3ms)[0m  [1m[34mSELECT  `books`.* FROM `books` WHERE `books`.`id` = 6 LIMIT 1[0m
+  [1m[36mTeam Load (0.3ms)[0m  [1m[34mSELECT  `teams`.* FROM `teams` WHERE `teams`.`id` = 2 LIMIT 1[0m
+  Rendered questions/index.html.erb within layouts/application (62.7ms)
+Completed 200 OK in 138ms (Views: 82.3ms | ActiveRecord: 32.6ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-04-07 12:51:56 -0300
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT `users`.* FROM `users`[0m
+  Rendered users/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/years" for 127.0.0.1 at 2017-04-07 12:51:56 -0300
+Processing by YearsController#index as HTML
+  Rendering years/index.html.erb within layouts/application
+  [1m[36mYear Load (0.4ms)[0m  [1m[34mSELECT `years`.* FROM `years`[0m
+  Rendered years/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 39ms (Views: 37.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roles" for 127.0.0.1 at 2017-04-07 12:51:57 -0300
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.4ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/roles" for 127.0.0.1 at 2017-04-07 12:51:59 -0300
+Processing by RolesController#index as HTML
+  Rendering roles/index.html.erb within layouts/application
+  [1m[36mRole Load (0.3ms)[0m  [1m[34mSELECT `roles`.* FROM `roles`[0m
+  Rendered roles/index.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 43ms (Views: 41.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/teams" for 127.0.0.1 at 2017-04-07 12:52:00 -0300
+Processing by TeamsController#index as HTML
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-04-07 12:52:00 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (0.8ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 41ms (Views: 39.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for 127.0.0.1 at 2017-04-07 12:52:00 -0300
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.5ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (12.9ms)
+Completed 200 OK in 51ms (Views: 48.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-04-07 12:52:01 -0300
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.0ms)
+
+
