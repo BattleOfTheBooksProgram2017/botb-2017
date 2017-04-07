@@ -7449,6 +7449,7 @@ Processing by HomeController#index as HTML
 Completed 200 OK in 45ms (Views: 44.5ms | ActiveRecord: 0.0ms)
 
 
+<<<<<<< HEAD
   [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
@@ -10290,5 +10291,14 @@ Processing by TeamsController#index as HTML
   [1m[36mTeam Load (0.2ms)[0m  [1m[34mSELECT `teams`.* FROM `teams`[0m
   Rendered teams/index.html.erb within layouts/application (8.6ms)
 Completed 200 OK in 69ms (Views: 63.8ms | ActiveRecord: 1.3ms)
+=======
+Started GET "/books" for 127.0.0.1 at 2017-04-07 13:49:56 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by BooksController#index as HTML
+  Rendering books/index.html.erb within layouts/application
+  [1m[36mBook Load (0.4ms)[0m  [1m[34mSELECT `books`.* FROM `books`[0m
+  Rendered books/index.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 337ms (Views: 315.5ms | ActiveRecord: 1.5ms)
+>>>>>>> 85b4428138e6b0d762f3ff98046001f87dcd78b9
 
 
