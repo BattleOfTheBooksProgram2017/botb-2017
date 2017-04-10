@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+
+  get 'battle/index'
+
+  get 'battle/battle'
+
+  get 'battle/practice'
+
   resources :book_playlists
   resources :playlists
   get 'home/index'
