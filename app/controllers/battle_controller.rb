@@ -23,8 +23,8 @@ class BattleController < ApplicationController
       for id in ids do
         if id == random
           is_free = false
-        end
-      end
+        end #end if
+      end #end for
 
       if is_free
         ids.push(random)
@@ -36,13 +36,13 @@ class BattleController < ApplicationController
         q_random += 1
         @question_list.push(q_random)
         i += 1
-      end
+      end #end if
 
-    end
+    end #end while
 
 
 
-  end
+  end #end battle
 
   def practice
 
