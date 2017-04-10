@@ -10302,3 +10302,1059 @@ Completed 200 OK in 337ms (Views: 315.5ms | ActiveRecord: 1.5ms)
 >>>>>>> 85b4428138e6b0d762f3ff98046001f87dcd78b9
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (414.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS `capstone2017`[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (56.4ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE `book_playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.7ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (9.0ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.4ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20170407164002)[0m
+  [1m[35m (1.6ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20170303143152),
+(20170303143215),
+(20170303143232),
+(20170303133535),
+(20170303143114),
+(20170331170706),
+(20170331171107),
+(20170303133225);
+
+[0m
+  [1m[35m (20.2ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (23.4ms)[0m  [1m[35mDROP TABLE `admins` CASCADE[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.2ms)[0m  [1m[35mDROP TABLE `book_playlists` CASCADE[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE TABLE `book_playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.4ms)[0m  [1m[35mDROP TABLE `books` CASCADE[0m
+  [1m[35m (13.4ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.7ms)[0m  [1m[35mDROP TABLE `levels` CASCADE[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.2ms)[0m  [1m[35mDROP TABLE `playlists` CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE `playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.2ms)[0m  [1m[35mDROP TABLE `questions` CASCADE[0m
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE `roles` CASCADE[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE `teams` CASCADE[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE `users` CASCADE[0m
+  [1m[35m (6.6ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE `years` CASCADE[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Teen', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Elementary', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Wildcats', 'Clayton Park Junior High', 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Lions', 'Fairview Junior High', 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2018, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2017, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2016, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Wrath and the Dawn', 'Renee Ahdieh', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anya\'s War', 'Andrea Alban', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Me and Earl and the Dying Girl', 'Jesse Andrews', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Mosquitoland', 'David Arnold', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Night Gardener', 'Jonathan Auxier', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Queen', 'Victoria Aveyard', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Law of Loving Others', 'Kate Axelrod', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Hill', 'Karen Bass', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Nowhere Wild', 'Joe Beernink', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Witch Hunter', 'Virginia Boecker', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Away Running', 'Luc Bouchard and David Wright', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Scorpion Rules', 'Erin Bow', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Time of Dragon Moon', 'Janet Lee Carey', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Sight Unseen', 'David Carroll', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Wolf', 'Jennifer Dance', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Exquisite Captive', 'Heather Demetrios', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Material Girls', 'Elaine Dimopoulos', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Salvage', 'Alexandrea Duncan', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Court of Fives', 'Kate Elliott', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Accident Season', 'Moira Fowley-Doyle', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Girl at Midnight', 'Melissa Grey', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Swish', 'Dawn Green', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Magonia', 'Maria Dahvana Headley', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Horse Girl', 'Kay Honeyman', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Girl Defective', 'Simmone Howell', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('What We Hide', 'Marthe Jocelyn', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Going Over', 'Beth Kephart', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Grandmaster', 'Davis Klass', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Secrets', 'James Klise', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Getting Stared At', 'Laura Langston', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Under a Painted Sky', 'Stacey Lee', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Wish', 'Amber Lough', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Egg and Spoon', 'Gregory Maguire', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Vanishing Girls', 'Lauren Oliver', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anatomy of a Misfit', 'Andrea Portes', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Numbers', 'David Poulsen', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Snow Like Ashes', 'Sara Raasch', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Boy in the Black Suit', 'Jason Reynolds', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Bodies We Wear', 'Jeyn Roberts', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Bone Gap', 'Laura Ruby', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (3.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Blackthorn Key', 'Kevin Sands', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Challenger Deep', 'Neal Shusterman', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Are You Experienced', 'Jordan Sonnenblick', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Walls Around Us', 'Nova Ren Suma', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Dogs', 'Allan Stratton', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('An Ember in the Ashes', 'Sabaa Tahir', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Trouble is a Friend of Mine', 'Stephanie Tromly', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Fire Colour One', 'Jenny Valentine', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Like Water on Stone', 'Dana Walrath', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Black Dove, White Raven', 'Elizabeth Wein', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Afterworlds', 'Scott Westerfeld', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Diamond Boy', 'Michael Williams', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Cure for Dreaming', 'Cat Winters', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Belzhar', 'Meg Wolitzer', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Museum of Intangible Things', 'Wendy Wunder', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Laura Nelson', 'lowercase', 'W0291149@nscc.ca', 2, 2, 'password', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Eric Pascher', 'pasche', 'W0291149@nscc.ca', 1, 1, 'password', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Jason Chen', 'json', 'W0291149@nscc.ca', 1, 3, 'password', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Jeremy Stone', 'thejman', 'W0291149@nscc.ca', 2, 1, 'password', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('May Mohammed', 'maym', 'W0291149@nscc.ca', 2, 2, 'password', '2017-04-10 12:37:06', '2017-04-10 12:37:06')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `ar_internal_metadata`.`value` FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  [1m[35m (54.3ms)[0m  [1m[35mDROP DATABASE IF EXISTS `capstone2017`[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE DATABASE `capstone2017` DEFAULT CHARACTER SET `utf8`[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `book_playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.4ms)[0m  [1m[35mCREATE TABLE `playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) PRIMARY KEY) ENGINE=InnoDB[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (20170407164002)[0m
+  [1m[35m (1.1ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES
+(20170303143152),
+(20170303143215),
+(20170303143232),
+(20170303133535),
+(20170303143114),
+(20170331170706),
+(20170331171107),
+(20170303133225);
+
+[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2017-04-10 12:39:14', '2017-04-10 12:39:14')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (4.4ms)[0m  [1m[35mDROP TABLE `admins` CASCADE[0m
+  [1m[35m (18.8ms)[0m  [1m[35mCREATE TABLE `admins` (`id` int AUTO_INCREMENT PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL, UNIQUE INDEX `index_admins_on_email` USING btree (`email`), UNIQUE INDEX `index_admins_on_reset_password_token` USING btree (`reset_password_token`)) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE `book_playlists` CASCADE[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE `book_playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE `books` CASCADE[0m
+  [1m[35m (6.7ms)[0m  [1m[35mCREATE TABLE `books` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `Author` varchar(255), `Genre` varchar(255), `CoverImage` varchar(255), `Details` text, `YearID` int, `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (4.0ms)[0m  [1m[35mDROP TABLE `levels` CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE `levels` (`id` int AUTO_INCREMENT PRIMARY KEY, `LevelName` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.0ms)[0m  [1m[35mDROP TABLE `playlists` CASCADE[0m
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `playlists` (`id` int AUTO_INCREMENT PRIMARY KEY, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (5.3ms)[0m  [1m[35mDROP TABLE `questions` CASCADE[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE `questions` (`id` int AUTO_INCREMENT PRIMARY KEY, `Question` text, `BookID` int, `TeamID` int, `createdBy` int, `updatedBy` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.1ms)[0m  [1m[35mDROP TABLE `roles` CASCADE[0m
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE `roles` (`id` int AUTO_INCREMENT PRIMARY KEY, `Title` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (3.8ms)[0m  [1m[35mDROP TABLE `teams` CASCADE[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `teams` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `School` varchar(255), `LevelID` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.7ms)[0m  [1m[35mDROP TABLE `users` CASCADE[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE `users` (`id` int AUTO_INCREMENT PRIMARY KEY, `Name` varchar(255), `UserName` varchar(255), `email` varchar(255), `TeamID` int, `RoleID` int, `password` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (2.8ms)[0m  [1m[35mDROP TABLE `years` CASCADE[0m
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE `years` (`id` int AUTO_INCREMENT PRIMARY KEY, `Year` int, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB DEFAULT CHARSET=utf8[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT version FROM `schema_migrations`[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Student', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Coach', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `roles` (`Title`, `created_at`, `updated_at`) VALUES ('Admin', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Teen', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `levels` (`LevelName`, `created_at`, `updated_at`) VALUES ('Elementary', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Wildcats', 'Clayton Park Junior High', 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `teams` (`Name`, `School`, `LevelID`, `created_at`, `updated_at`) VALUES ('Lions', 'Fairview Junior High', 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2018, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2017, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `years` (`Year`, `created_at`, `updated_at`) VALUES (2016, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Wrath and the Dawn', 'Renee Ahdieh', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anya\'s War', 'Andrea Alban', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Me and Earl and the Dying Girl', 'Jesse Andrews', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Mosquitoland', 'David Arnold', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Night Gardener', 'Jonathan Auxier', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Queen', 'Victoria Aveyard', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Law of Loving Others', 'Kate Axelrod', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Hill', 'Karen Bass', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Nowhere Wild', 'Joe Beernink', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Witch Hunter', 'Virginia Boecker', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Away Running', 'Luc Bouchard and David Wright', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Scorpion Rules', 'Erin Bow', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Time of Dragon Moon', 'Janet Lee Carey', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Sight Unseen', 'David Carroll', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Red Wolf', 'Jennifer Dance', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Exquisite Captive', 'Heather Demetrios', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Material Girls', 'Elaine Dimopoulos', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Salvage', 'Alexandrea Duncan', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Court of Fives', 'Kate Elliott', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Accident Season', 'Moira Fowley-Doyle', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Girl at Midnight', 'Melissa Grey', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('In the Swish', 'Dawn Green', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Magonia', 'Maria Dahvana Headley', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Horse Girl', 'Kay Honeyman', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Girl Defective', 'Simmone Howell', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('What We Hide', 'Marthe Jocelyn', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Going Over', 'Beth Kephart', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Grandmaster', 'Davis Klass', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Secrets', 'James Klise', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Art of Getting Stared At', 'Laura Langston', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Under a Painted Sky', 'Stacey Lee', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Fire Wish', 'Amber Lough', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Egg and Spoon', 'Gregory Maguire', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Vanishing Girls', 'Lauren Oliver', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Anatomy of a Misfit', 'Andrea Portes', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Numbers', 'David Poulsen', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Snow Like Ashes', 'Sara Raasch', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Boy in the Black Suit', 'Jason Reynolds', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Bodies We Wear', 'Jeyn Roberts', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Bone Gap', 'Laura Ruby', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Blackthorn Key', 'Kevin Sands', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Challenger Deep', 'Neal Shusterman', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Are You Experienced', 'Jordan Sonnenblick', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Walls Around Us', 'Nova Ren Suma', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Dogs', 'Allan Stratton', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('An Ember in the Ashes', 'Sabaa Tahir', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Trouble is a Friend of Mine', 'Stephanie Tromly', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Fire Colour One', 'Jenny Valentine', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Like Water on Stone', 'Dana Walrath', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Black Dove, White Raven', 'Elizabeth Wein', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Afterworlds', 'Scott Westerfeld', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Diamond Boy', 'Michael Williams', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Cure for Dreaming', 'Cat Winters', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('Belzhar', 'Meg Wolitzer', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `books` (`Title`, `Author`, `Genre`, `CoverImage`, `Details`, `YearID`, `LevelID`, `created_at`, `updated_at`) VALUES ('The Museum of Intangible Things', 'Wendy Wunder', 'TEEN', 'a', 'book', 2, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Laura Nelson', 'lowercase', 'W0291149@nscc.ca', 2, 2, 'password', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Eric Pascher', 'pasche', 'W0291149@nscc.ca', 1, 1, 'password', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Jason Chen', 'json', 'W0291149@nscc.ca', 1, 3, 'password', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('Jeremy Stone', 'thejman', 'W0291149@nscc.ca', 2, 1, 'password', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `users` (`Name`, `UserName`, `email`, `TeamID`, `RoleID`, `password`, `created_at`, `updated_at`) VALUES ('May Mohammed', 'maym', 'W0291149@nscc.ca', 2, 2, 'password', '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the main character\'s love not who he appears to be?', 1, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is a land on the verge of an uprising?', 1, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character momentarily become the \"Zombie Hug Monster\"?', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is one character\'s walls covered with posters of male characters, primarily Hugh Jackman?', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book are two characters called the \"young nihilist\" by one character\'s dad?', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which the main character\'s favourite movie is \"Aguirre The Wrath of God\"', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which two characters drink pho laced with marijuana (supposedly).', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which a character buys a pink fuzzy hat to cover their bald head.', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a university professor like to purchase strange animal-based food products?', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which the format periodically switches into play format.', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a character break their arm while running away from getting elbowed in the face?', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which two characters create a film involving LEGO, sock-puppets, a spinning tarantula, and a message to someone who is dying.', 3, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book did two siblings travel to Sourwoods?', 5, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book did two children leave their house to go to the Windsor House?', 5, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where there are two kinds of people: Reds and Silvers', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book that has walls that look like glass, but are really made out of diamonds.', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character make a deal with the King, where she pretends to be someone else, in order to keep her family safe?', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the future queen is selected during a Queenstrial.', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character find out that she has the ability to control electricity?', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the colour that the high born people wear indicates which family they belong?', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character acquires the nickname \"Little Lighting Girl\".', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the phrase \"Anyone can betray anyone\" important?', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character finds out that her favourite brother isn\'t dead afterall.', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the revolutionaries use the phrase \"Rise, Red as the dawn\".', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book do we learn about First Friday, and know it\'s about holding power over the Reds.', 6, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book are the children of the leaders the first to die in a war?', 12, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is Artificial Intelligence (AI) real - and in charge?', 12, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the first rule of war \"Make it personal\"?', 12, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the main character bisexual?', 12, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do AIs hold the world hostage?', 12, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character keeps lots of lists.', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character has Stargardt\'s disease', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character\'s family name their cabin \"Splitsville\"?', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character and his friend find a tussock / floaton / floating island?', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is one of the characters named after her blood type?', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character cross the Glimmer Line to go to Perpetuum?', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character\'s friend calls him a human calculator.', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character\'s favourite activity was to ride his bike.', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a women is researching children\'s heart disease in order to find a cure for her daughter.', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a boy learn Spanish to impress a girl, and later finds out that she speaks Portuguese?', 14, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character is a jinni from Arjinna.', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the main character put into a metal bottle to punish her?', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where metal is a poison to the main character and her people.', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a client\'s wish is to have the ability to be invisible, and that wish is granted, but, not the ability to become visible again.', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a ghoul kill many girls in his search to find his target?', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a slace is actually the new Empress.', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where you caste is based on your eye and smoke colour, and your powers.', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character mixes sleeping potion with flavoured wine, in order to steal a bottle.', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a character make the hills of Los Angeles burn in order to smoke out his target?', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character determines who is running the slave trade and wants to stop them.', 16, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where people use Unum like we use cell phones, and use Tabula like we use tablets and computers.', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do people use a trendchecking gun to make sure that their clothing are in trendy?', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do people take P pills (Placidophilus pills) to feel better?', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a buy have a funny ticc, where he flicks his eyebrows up and down really fast, just once?', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book are you called an Adequat if you are not selected as a talented person in grade 7?', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where seventh graders have a \"Tap\" ceremony, and if they have talent, they are selected to work in one of the creative industries.', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a designer creates a Tortue line of clothing, just to see if people will actually wear clothing that hurts.', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy defaces a statue of a famous person from their community.', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a female pop star date a male pop star because it is good for publicity?', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a mom tells her daughter that she should quit her job instead of accepting a demotion?', 17, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book is there a so girl?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does on of the main characters have a bad facial scar?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book do the men take multiple wives?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book do the characters think that Earth will corrupt its women?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book does the main character escape to Earth with the help of a ship captain?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book does the main character, a ship captain, and her daughter live in the gyre?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book is the main character searching for her modrie?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book is the main character illiterate?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In what book does much of the action take place in Mumbai?', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In this book, the main character is good at fixes.', 18, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character realizes that an old friend is in ALL of her pictures on her phone.', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character kiss her ex-step-brother?', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where students type out their secrets, and place them in a special box.', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do the main characters have a Hallowe\'en party in an old ghost house?', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is a girl abused by her musician boyfriend?', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where one of the characters uses the cards to answer questions.', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character buy Hallowe\'en costumes at a specialty shop, that really never existed?', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character sees distorted images of herself and her family and believes them to be real.', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do we learn that the mother has sent her ex-husband away because she suspected him of doing things to her girls?', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where every October, the mother makes everything as safe as possible in their home.', 20, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where two groups are at war:  the Avicen and the Drakarin.', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do some of the characters need to cover themselves so that humans don\'t notice that they have feathers.', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the main character a thief with two rules: Don\'t get caught, and, If you get caught, run.', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book can a person travel long distances very quickly, by using Shadow dust on a threshold and crossing the In-Between?', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a group are on a quest for the legendary Firebird.', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character protect her home with wards, and needs a drop of her own blood to open the door.', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a music box playing \"The Magpie\'s Lullaby\" is given as a gift.', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a person become a vessel, and gets the memories of another character\'s past love?', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character feels guilty after killing someone that she has always hated?', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where an important treasure is in a sealed room, and it is actually just a mirror.', 21, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where we learn that \"Patzer\" means Beginner.', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a boy find out that his father was a famous chess player when he was 16 years old?', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy sees his father have a break down.', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is one of the characters a swimming athlete who abuses his girlfriend?', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a father claims to have given up something important to him,  because it wasn\'t a good way to meet girls.', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do the students work in a pond named after the first headmaster of their school?', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where two older boys invite a younger boy and his father to join their team in a father-son tournament in New York City.', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a team\'s name is \"Mind Cripplers\".', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a mother-daughter team joins a tournament for father-son teams.', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a team learn that family is more important than winning?', 28, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where two girls switch places with a wish on a jinni.', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where students get a special tattoo indicating their group and powers when they graduate.', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a girl hide the tattoo on her hand with henna?', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a jinni transport into the human palace, and later finds out that she is the only jinni who can get past the wards?', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a human is the first to see the jinni\'s underground cavern.', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a girl finds out that her mother wasn\'t really her mother, and that her birth mother died when she was an infant.', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a girl get her training from a man she always thought was her uncle?', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where two girls later find out that they were twins separated as infants.', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a war was started by a wan who killed a couple, and then blamed the other group.', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where two lamps in two different cities, join the two worlds.', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do two sisters switch places?', 32, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book did a father kill his family?', 35, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book did a girl date a guy she didn\'t love?', 35, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book did a school nerd turn into a bad boy?', 35, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does one character say to another, that he isn\'t jen-yoo-wine?', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the student\'s assignment is to devise a hoax, and present it to the class.', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a boy drive with his father at night, with his dead uncle between them?', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a lady\'s nickname is based on the digits tattooed on her arm.', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a man hate Jews so much, that he hates a woman who saved his grandfather\'s life?', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy gets a flat tire after dropping off his date to her home.', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a boy like to work on fixing old cars with his older brother?', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where former students often drop in on a favourite teacher\'s classroom during class time.', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is a boy talked into helping to burn down a house, but, realizes that they meant to burn the owner also?', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character describe his school as \"average\"?', 36, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which the seasons are kingdoms.', 37, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the main character not who she thought she was?', 37, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does an orphan boy become an apprentice to an apothecary?', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where two boys accidentally shoot a stuffed bear with a homemade cannon.', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy decodes secret messages left to him by his master.', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy is slapped and called useless and sent away, and later figures out that his master did this to save him.', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do two boys find a hidden workshop by figuring out a secret code?', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is a boy\'s master\'s best friend a book seller?', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where an apprentice finds the recipe for The Archangel\'s Fire, and makes some of it.', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is a favourite pigeon named Bridget?', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the Cult of the Archangel are killing and torturihng people.', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy gets out of a locked room, by putting Oil of Vitriol on the lock.', 41, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a boy find his father\'s prized possession, Jimi Hendrix\'s famous white guitar?', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy goes back in time and meets his uncle for the first time.', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do two kids cut their feet at a concern, and meet some famous musicians in the medical tent?', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do two of the characters rescue a third character after he climbed a tall scaffolding in a lightning storm?', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where the main character\'s uncle died of a drug overdose.', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do a boy and his older brother have alcoholic parents who don\'t take care of their sons?', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does the main character have very over-protective parents?', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy is actually named after himself.', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book do four teenagers get high after eating brownies that they didn\'t know were laced with magic mushroom?', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy goes back in time to the famous Woodstock concert.', 43, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book, where the main character has read the book Dracula several times.', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a father have his daughter hypnotized so that she will no longer wish for votes for women, or wish to go to college?', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a girl sees the world as it really is, and as such has visions showing people differently than they look.', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a mother left her child and husband to work in the theater.', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is a girl compelled to say \"All is Well\", when things definitely are not well?', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a boy is working to make money in order to pay for a surgeon to remove cancer from his sister.', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a girl wish for a pair of bloomers, as it would be easier to ride her bicycle?', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does a girl vomit when she hears words like \"Suffrage\", \"Women\'s rights\", \"Votes for Women\", \"Susan B. Anthony\", and \"College\"?', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where several women were hypnotized to not be able to speak, decide that they do believe in Suffrage after all.', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book where a girl tells a boy that she doesn\'t want to be with someone who thinks she\'s inferior to him.', 53, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does writing in a red leather journal lead to another world?', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book are five totally different students bond through trauma and Sylvia Plath?', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which the main character treasures a jar of \"Tiptree Little Scarlet Strawberry Preserve\"', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which one character keeps a bottle of off-brand ketchup hidden in their room.', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which one character\'s alcoholic mom is seen as a \"charming leprechaun\".', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which the main character helps birth a goat over Thanksgiving break.', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book is the main character forced into an acapella group called the Barn tones.', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('In which book does one character find a lead on their missing brother in another world?', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which a character\'s brother spends more time in the video game \"Dream Wanderer\" than in the real world.', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO `questions` (`Question`, `BookID`, `TeamID`, `createdBy`, `updatedBy`, `created_at`, `updated_at`) VALUES ('Name the book in which a character\'s seemingly perfect family is broken apart over a tape of adultery.', 54, 2, 1, 1, '2017-04-10 12:39:15', '2017-04-10 12:39:15')[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
