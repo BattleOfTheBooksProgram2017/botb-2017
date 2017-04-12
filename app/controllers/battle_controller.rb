@@ -2,6 +2,10 @@ class BattleController < ApplicationController
   def index
   end
 
+  def battle_how_many
+
+  end
+
   def battle
 
     @books = Book.all

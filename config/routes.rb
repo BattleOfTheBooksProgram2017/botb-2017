@@ -2,6 +2,8 @@ Rails.application.routes.draw do
 
   get 'battle/index'
 
+  get 'battle/battle_how_many'
+
   get 'battle/battle'
 
   get 'battle/practice'
