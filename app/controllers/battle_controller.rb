@@ -11,38 +11,65 @@ class BattleController < ApplicationController
     @books = Book.all
     @question_count = max_question_count_params
 
-    count = @books.count(:id)
+    book_count = @books.count(:id)
+    threshold = book_count / 2
+    display_count = 0
 
-    #counter = count + 1
-
-    ids = []
     @book_list = []
     @question_list = []
 
-    i = 0
-    while i < @question_count do
-      is_free = true
-      random = rand(count-1)
-      random += 1
-      for id in ids do
-        if id == random
-          is_free = false
-        end #end if
-      end #end for
+    # if @question_count.equal? nil
+    #   @question_count = 30
+    # end
 
-      if is_free
-        ids.push(random)
-        book = Book.find(random)
+    @question_count = 30
+
+    for book in @books
+      if rand(book_count) >= threshold
         @book_list.push(book)
-        question = Question.find_by(BookID: book.id)
-        question_count = question.count(:id)
-        q_random = rand(question_count)
-        q_random += 1
-        @question_list.push(q_random)
-        i += 1
-      end #end if
+        display_count += 1
+      end
+      if display_count >= @question_count
+        break
+      end
+    end
 
-    end #end while
+    # count = @books.count(:id)
+    # count = count - 1
+    #
+    # #counter = count + 1
+    #
+    # ids = []
+    # @book_list = []
+    # @question_list = []
+    #
+    # i = 0
+    # while i < @question_count do
+    #   is_free = true
+    #   random = rand(count)
+    #   random += 1
+    #   for id in ids do
+    #     if id == random
+    #       is_free = false
+    #     end #end if
+    #   end #end for
+    #
+    #   if is_free
+    #
+    #     book = Book.find(random)
+    #     @book_list.push(book)
+    #     question = Question.all.where(BookID: book.id)
+    #     question_count = question.count(:id)
+    #     question_count = -1
+    #     q_random = rand(question_count)
+    #     q_random += 1
+    #     @question_list.push(Question.find(q_random))
+    #
+    #     i += 1
+    #
+    #   end #end if
+    #
+    # end #end while
 
 
 
