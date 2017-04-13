@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+#https://davidmles.com/seeding-database-rails/
+
 Role.create(Title: 'Student')
 Role.create(Title: 'Coach')
 Role.create(Title: 'Admin')

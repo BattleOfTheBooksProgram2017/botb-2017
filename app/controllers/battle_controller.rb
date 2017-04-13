@@ -8,70 +8,40 @@ class BattleController < ApplicationController
 
   def battle
 
-    @books = Book.all
-    @question_count = max_question_count_params
-
-    book_count = @books.count(:id)
-    threshold = book_count / 2
-    display_count = 0
-
     @book_list = []
     @question_list = []
 
-    # if @question_count.equal? nil
-    #   @question_count = 30
+    books = Book.all
+    #@question_count = max_question_count_params
+
+    #if @question_count == nil
+      @question_count = 30
+    #end
+
+    #http://stackoverflow.com/questions/5060660/how-can-i-shuffle-an-array-hash-in-ruby
+    books = books.shuffle
+
+    i=0
+
+    # while i < @question_count
+    #
+    #   @book_list.push(books[i])
+    #
+    #   i += 1
+    #
     # end
 
-    @question_count = 30
-
-    for book in @books
-      if rand(book_count) >= threshold
+    for book in books
+      questions = book.questions.shuffle
+      if questions[0] != nil
+        @question_list.push(questions[0])
         @book_list.push(book)
-        display_count += 1
       end
-      if display_count >= @question_count
+      if i >= @question_count
         break
       end
+      i += 1
     end
-
-    # count = @books.count(:id)
-    # count = count - 1
-    #
-    # #counter = count + 1
-    #
-    # ids = []
-    # @book_list = []
-    # @question_list = []
-    #
-    # i = 0
-    # while i < @question_count do
-    #   is_free = true
-    #   random = rand(count)
-    #   random += 1
-    #   for id in ids do
-    #     if id == random
-    #       is_free = false
-    #     end #end if
-    #   end #end for
-    #
-    #   if is_free
-    #
-    #     book = Book.find(random)
-    #     @book_list.push(book)
-    #     question = Question.all.where(BookID: book.id)
-    #     question_count = question.count(:id)
-    #     question_count = -1
-    #     q_random = rand(question_count)
-    #     q_random += 1
-    #     @question_list.push(Question.find(q_random))
-    #
-    #     i += 1
-    #
-    #   end #end if
-    #
-    # end #end while
-
-
 
   end #end battle
 
