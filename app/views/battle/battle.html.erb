@@ -1,2 +1,24 @@
 <h1>Battle#battle</h1>
 <p>Find me in app/views/battle/battle.html.erb</p>
+
+
+<table>
+  <thead>
+  <tr>
+    <th>Question</th>
+    <th>Title</th>
+    <th>Author</th>
+  </tr>
+  </thead>
+  <tbody>
+  <% @question_list.each do |question| %>
+      <tr>
+        <td><%= question.Question %></td>
+        <td><%= question.book.Title %></td>
+        <td><%= question.book.Author %></td>
+      </tr>
+  <% end %>
+  </tbody>
+</table>
+
+<br/>

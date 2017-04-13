@@ -12,6 +12,7 @@ class BattleController < ApplicationController
     @question_list = []
 
     books = Book.all
+
     #@question_count = max_question_count_params
 
     #if @question_count == nil
@@ -36,11 +37,11 @@ class BattleController < ApplicationController
       if questions[0] != nil
         @question_list.push(questions[0])
         @book_list.push(book)
+        i += 1
       end
       if i >= @question_count
         break
       end
-      i += 1
     end
 
   end #end battle
