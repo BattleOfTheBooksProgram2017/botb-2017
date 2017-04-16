@@ -18,8 +18,3 @@
 
 
 
-# ignore database.yml because of the mysql socket is different on Cloud9
-/config/database.yml
-
-# ignore the .idea folder because that is really annoying to deal with, even though it's too late.
-/.idea

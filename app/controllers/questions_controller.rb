@@ -7,6 +7,20 @@ class QuestionsController < ApplicationController
     @questions = Question.all
   end
 
+  def howmanyquestions
+    @questions = Question.all
+  end
+
+  def randomquestion
+    @questions = Question.all
+  end
+
+  def answer
+    @questions = Question.all
+  end
+
+
+
   # GET /questions/1
   # GET /questions/1.json
   def show
