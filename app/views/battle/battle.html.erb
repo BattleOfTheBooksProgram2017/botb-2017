@@ -1,6 +1,29 @@
 <h1>Battle#battle</h1>
 <p>Find me in app/views/battle/battle.html.erb</p>
 
+<div id="questions" class="hideMe">
+  <%= @questions %>
+</div>
+<div id="books" class="hideMe">
+  <%= @books %>
+</div>
+
+<div id="askQuestion">
+
+  <input type="hidden" id="questionIndex" />
+
+  <h5 id="question"></h5>
+  <div id="timer"></div>
+  <button id="displayAnswer">Answer</button>
+
+</div>
+
+<div id="showAnswer" class="hideMe">
+  <h4 id="title"></h4>
+  <h5 id="author"></h5>
+  <button id="nextQuestion">Next Question</button>
+</div>
+
 
 <table>
   <thead>
@@ -22,3 +45,54 @@
 </table>
 
 <br/>
+
+<!--<script src="battle.js" type="javascript"></script>-->
+<script>
+  function nextQuestion(questions, books, questionIndex)
+  {
+    question = questions[questionIndex];
+    book = books[questionIndex];
+    qIndex = questionIndex + 1;
+
+    $("#questionIndex").val(qIndex);
+    $("#question").html(question.Question);
+    $("#title").html(book.Title);
+    $("#author").html(book.Author);
+  }
+
+  $(document).ready(function(){
+
+    var questions = $("#questions").html();
+    questions = JSON.parse(questions);
+
+    var books = $("#books").html();
+    books = JSON.parse(books);
+
+    $("#displayAnswer").click(function(){
+
+      $("#showAnswer").removeClass("hideMe");
+      $("#askQuestion").addClass("hideMe");
+
+    });
+
+    $("#nextQuestion").click(function(){
+
+      qIndex = $("#questionIndex").val();
+
+      if(qIndex < questions.length)
+      {
+        $("#showAnswer").addClass("hideMe");
+        $("#askQuestion").removeClass("hideMe");
+        nextQuestion(questions, books, qIndex);
+      }
+      else
+      {
+        alert("Done all questions");
+      }
+
+    });
+
+    nextQuestion(questions, books, 0)
+
+  });
+</script>

@@ -10,11 +10,14 @@ Rails.application.routes.draw do
 
   resources :book_playlists
   resources :playlists
+
   get 'home/index'
+
   get 'books/addaquestion'
   get 'questions/howmanyquestions'
   get 'questions/randomquestion'
   get 'questions/answer'
+
   get 'home/about'
 
   get 'home/contact'
