@@ -7,8 +7,11 @@ class BooksController < ApplicationController
     @books = Book.all
   end
 
-  def addaquestion
+
+
+  def _formforquestions
     @books = Book.all
+
   end
 
   # GET /books/1

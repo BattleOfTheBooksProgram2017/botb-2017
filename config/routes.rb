@@ -12,10 +12,12 @@ Rails.application.routes.draw do
   resources :playlists
   get 'home/index'
   get 'books/addaquestion'
+  get 'questions/addaquestion'
   get 'questions/howmanyquestions'
   get 'questions/randomquestion'
   get 'questions/answer'
   get 'home/about'
+  get 'books/_formforquestions'
 
   get 'home/contact'
 
