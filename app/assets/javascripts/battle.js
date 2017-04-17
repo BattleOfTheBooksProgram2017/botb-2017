@@ -2,19 +2,27 @@
  * Created by inet2005 on 4/17/17.
  */
 
-function nextQuestion(questions, questionIndex)
+function nextQuestion(questions, books, questionIndex)
 {
     question = questions[questionIndex];
-    $("#questionIndex").val(questionIndex + 1);
+    book = books[questionIndex];
+    qIndex = questionIndex * 1;
+    qIndex = qIndex + 1;
+
+    $("#questionIndex").val(qIndex);
     $("#question").html(question.Question);
-    $("#title").html(question.book.Title);
-    $("#author").html(question.book.Author);
+    $("#title").html(book.Title);
+    $("#author").html(book.Author);
+    $(".questionNumber").html(qIndex);
 }
 
 $(document).ready(function(){
 
-    var questions = $("#questions").html;
+    var questions = $("#questions").html();
     questions = JSON.parse(questions);
+
+    var books = $("#books").html();
+    books = JSON.parse(books);
 
     $("#displayAnswer").click(function(){
 
@@ -29,7 +37,9 @@ $(document).ready(function(){
 
         if(qIndex < questions.length)
         {
-            nextQuestion(questions, qIndex);
+            $("#showAnswer").addClass("hideMe");
+            $("#askQuestion").removeClass("hideMe");
+            nextQuestion(questions, books, qIndex);
         }
         else
         {
@@ -37,6 +47,8 @@ $(document).ready(function(){
         }
 
     });
+
+    nextQuestion(questions, books, 0)
 
 });
 

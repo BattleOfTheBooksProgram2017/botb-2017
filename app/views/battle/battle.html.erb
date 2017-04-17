@@ -1,5 +1,5 @@
-<h1>Battle#battle</h1>
-<p>Find me in app/views/battle/battle.html.erb</p>
+<h1>Battle!</h1>
+<!--<p>Find me in app/views/battle/battle.html.erb</p>-->
 
 <div id="questions" class="hideMe">
   <%= @questions %>
@@ -12,39 +12,18 @@
 
   <input type="hidden" id="questionIndex" />
 
-  <h5 id="question"></h5>
+  <h5>Question #<span class="questionNumber"></span>- <span id="question"></span></h5>
   <div id="timer"></div>
   <button id="displayAnswer">Answer</button>
 
 </div>
 
 <div id="showAnswer" class="hideMe">
-  <h4 id="title"></h4>
-  <h5 id="author"></h5>
+  <h5>Answer #<span class="questionNumber"></span></h5>
+  <h3 id="title"></h3>
+  <h4 id="author"></h4>
   <button id="nextQuestion">Next Question</button>
 </div>
-
-
-<table>
-  <thead>
-  <tr>
-    <th>Question</th>
-    <th>Title</th>
-    <th>Author</th>
-  </tr>
-  </thead>
-  <tbody>
-  <% @question_list.each do |question| %>
-      <tr>
-        <td><%= question.Question %></td>
-        <td><%= question.book.Title %></td>
-        <td><%= question.book.Author %></td>
-      </tr>
-  <% end %>
-  </tbody>
-</table>
-
-<br/>
 
 <!--<script src="battle.js" type="javascript"></script>-->
 <script>
@@ -52,12 +31,14 @@
   {
     question = questions[questionIndex];
     book = books[questionIndex];
-    qIndex = questionIndex + 1;
+    qIndex = questionIndex * 1;
+    qIndex = qIndex + 1;
 
     $("#questionIndex").val(qIndex);
     $("#question").html(question.Question);
     $("#title").html(book.Title);
     $("#author").html(book.Author);
+    $(".questionNumber").html(qIndex);
   }
 
   $(document).ready(function(){

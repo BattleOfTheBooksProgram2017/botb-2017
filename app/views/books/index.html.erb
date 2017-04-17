@@ -12,13 +12,13 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= book.Title %></td>
-        <td><%= book.Author %></td>
-        <td><%= book.Genre %></td>
-        <td><%= book.CoverImage %></td>
-        <td><%= book.Details %></td>
-        <td><%= book.YearID %></td>
-        <td><%= book.LevelID %></td>
+        <td><%= book.Title %>Title</td>
+        <td><%= book.Author %>Author</td>
+        <td><%= book.Genre %>Genre</td>
+        <td><%= book.CoverImage %>Cover Image</td>
+        <td><%= book.Details %>Details</td>
+        <td><%= book.YearID %>Year</td>
+        <td><%= book.LevelID %>Level</td>
 
 
         <td><%= link_to 'show', book %></td>

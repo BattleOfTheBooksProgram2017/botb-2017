@@ -4,15 +4,35 @@
     <title>Capstone2017</title>
     <%= csrf_meta_tags %>
 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+
+    <div id=sitetitle">
+      <h1>Battle of The Books</h1>
+    </div>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
 
-
+    <nav>
+      <ul>
+        <li><%= link_to('Home', root_path) %></li>
+        <li><%= link_to('About', home_about_path) %></li>
+        <li><%= link_to('Contact', home_contact_path) %></li>
+        <li><%= link_to('Books', books_path) %></li>
+        <li><%= link_to('Levels', levels_path) %></li>
+        <li><%= link_to('Teams', teams_path) %></li>
+        <li><%= link_to('Roles', roles_path) %></li>
+        <li><%= link_to('Years', years_path) %></li>
+        <li><%= link_to('Users', users_path) %></li>
+        <li><%= link_to('Questions', questions_path) %></li>
+        <li><%= link_to('Battle!', battle_battle_path) %></li>
+      </ul>
+    </nav>
 
     <div class="container">
     <%= yield %>
