@@ -44,6 +44,13 @@ class BattleController < ApplicationController
       end
     end
 
+    #http://stackoverflow.com/questions/3226054/how-to-convert-a-ruby-object-to-json
+    @questions = @question_list
+    @questions = @questions.to_json
+    @books = @book_list
+    @books = @books.to_json
+    #JSON(@questions)
+
   end #end battle
 
   def practice
