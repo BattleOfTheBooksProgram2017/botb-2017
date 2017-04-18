@@ -30,12 +30,12 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
 
-  def addaquestion
-    @questions = Question.all
-    @question = Question.new
-    @questions, include= ['books']
-    @books = Book.all
-  end
+  # def addaquestion
+  #   @questions = Question.all
+  #   @question = Question.new
+  #   @questions, include= ['books']
+  #   @books = Book.all
+  # end
 
   def new
     @questions = Question.all
