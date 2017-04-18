@@ -1,0 +1,19 @@
+<div id="question">
+
+  <h2>How many Questions</h2>
+  <p>Please enter a number between 5 and 50</p>
+
+  <!--http://regexr.com/-->
+  <!--http://www.regular-expressions.info/optional.html-->
+  <!--https://www.w3schools.com/tags/att_input_max.asp-->
+  <form method="GET" action="/battle/battle">
+    <div class="field">
+      <label for="numberOfQuestions">How many questions?</label>
+      <input type="number" name="numberOfQuestions" id="numberOfQuestions" required pattern="^\d(\d?)$" max="50" min="5" />
+    </div>
+    <div class="actions">
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+
+</div>

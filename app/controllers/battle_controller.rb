@@ -2,7 +2,7 @@ class BattleController < ApplicationController
   def index
   end
 
-  def battle_how_many
+  def how_many
 
   end
 
@@ -14,10 +14,11 @@ class BattleController < ApplicationController
     books = Book.all
 
     #@question_count = max_question_count_params
-
-    #if @question_count == nil
+    if params.fetch(:numberOfQuestions)
+      @question_count = params.fetch(:numberOfQuestions).to_i
+    else
       @question_count = 30
-    #end
+    end
 
     #http://stackoverflow.com/questions/5060660/how-can-i-shuffle-an-array-hash-in-ruby
     books = books.shuffle

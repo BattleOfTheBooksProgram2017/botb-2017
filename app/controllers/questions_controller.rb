@@ -4,20 +4,21 @@ class QuestionsController < ApplicationController
   # GET /questions
   # GET /questions.json
   def index
-    @questions = Question.all
+    # http://stackoverflow.com/questions/15060479/multiple-where-conditions-in-rails
+    @questions = Question.all#.where(TeamID: 2)
   end
 
-  def howmanyquestions
-    @questions = Question.all
-  end
-
-  def randomquestion
-    @questions = Question.all
-  end
-
-  def answer
-    @questions = Question.all
-  end
+  # def howmanyquestions
+  #   @questions = Question.all
+  # end
+  #
+  # def randomquestion
+  #   @questions = Question.all
+  # end
+  #
+  # def answer
+  #   @questions = Question.all
+  # end
 
 
 
@@ -30,12 +31,12 @@ class QuestionsController < ApplicationController
 
   # GET /questions/new
 
-  def addaquestion
-    @questions = Question.all
-    @question = Question.new
-    @questions, include= ['books']
-    @books = Book.all
-  end
+  # def addaquestion
+  #   @questions = Question.all
+  #   @question = Question.new
+  #   @questions, include= ['books']
+  #   @books = Book.all
+  # end
 
   def new
     @questions = Question.all

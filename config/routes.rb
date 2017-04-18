@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   get 'battle/index'
 
-  get 'battle/battle_how_many'
+  get 'battle/how_many'
 
   get 'battle/battle'
 
@@ -13,14 +13,14 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
-  get 'books/addaquestion'
-  get 'questions/addaquestion'
-  get 'questions/howmanyquestions'
-  get 'questions/randomquestion'
-  get 'questions/answer'
+  # get 'books/addaquestion'
+  # get 'questions/addaquestion'
+  # get 'questions/howmanyquestions'
+  # get 'questions/randomquestion'
+  # get 'questions/answer'
 
   get 'home/about'
-  get 'books/_formforquestions'
+  # get 'books/_formforquestions'
 
   get 'home/contact'
 
