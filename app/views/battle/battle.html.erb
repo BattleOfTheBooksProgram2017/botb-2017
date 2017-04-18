@@ -25,7 +25,7 @@
   <button id="nextQuestion">Next Question</button>
 </div>
 
-<!--<script src="battle.js" type="javascript"></script>-->
+<!--<script src="assets/javascripts/battle.js" type="javascript"></script>-->
 <script>
   function nextQuestion(questions, books, questionIndex)
   {
@@ -75,5 +75,24 @@
 
     nextQuestion(questions, books, 0)
 
+  });
+</script>
+
+<!--javascript for timer-->
+<script>
+  var timer = {
+    clock: 2*60+30,
+    show : function(){ $("#timer").text(clock); },
+    init : function () { clock = 2*60+30; },
+    down1second: function() {
+      clock--;
+      $("#timer").text(clock);
+      }
+  };
+
+$(document).ready(function(){
+    timer.init();
+    timer.show();
+    setInterval(timer.down1second, 1000);
   });
 </script>
