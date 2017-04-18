@@ -12,8 +12,8 @@
 
   <input type="hidden" id="questionIndex" />
 
-  <h5>Question #<span class="questionNumber"></span>- <span id="question"></span></h5>
-  <div id="timer"></div>
+  <h3>Question #<span class="questionNumber"></span>- <span id="question"></span></h3>
+  <h2 id="timer"></h2>
   <button id="displayAnswer">Answer</button>
 
 </div>
@@ -65,6 +65,8 @@
         $("#showAnswer").addClass("hideMe");
         $("#askQuestion").removeClass("hideMe");
         nextQuestion(questions, books, qIndex);
+        t = new Timer();
+        t.init();
       }
       else
       {
@@ -80,19 +82,34 @@
 
 <!--javascript for timer-->
 <script>
-  var timer = {
-    clock: 2*60+30,
-    show : function(){ $("#timer").text(clock); },
-    init : function () { clock = 2*60+30; },
-    down1second: function() {
-      clock--;
-      $("#timer").text(clock);
+  function Timer() {
+    const TIME_LENGTH = 2*60 + 30;
+//    const TIME_LENGTH = 3;
+    this.clock = TIME_LENGTH;
+    this.timeout = false;
+    this.show = function() { showClock(); };
+    this.init = function() {
+      clock = TIME_LENGTH;
+      showClock();
+    }
+    this.down1second = function() {
+      if (this.clock>0) this.clock--;
+      showClock();
+      if (clock<=0) {
+        $("#timer").text("Time is up!");
+        $("#timer").addClass("timerRed");
       }
-  };
+    }
 
-$(document).ready(function(){
-    timer.init();
-    timer.show();
-    setInterval(timer.down1second, 1000);
+    function showClock() {
+      $("#timer").text(Math.trunc(clock/60) + ":" + (clock%60));
+      $("#timer").removeClass("timerRed");
+    }
+  }
+
+  $(document).ready(function(){
+    t= new Timer();
+    t.init();
+    setInterval(t.down1second, 1000);
   });
 </script>
