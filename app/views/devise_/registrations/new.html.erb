@@ -3,6 +3,16 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 
+    <div class="field">
+      <%= f.label :Name %><br />
+      <%= f.email_field :Name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :Username %><br />
+      <%= f.email_field :Username %>
+    </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true %>
@@ -20,6 +30,16 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "off" %>
   </div>
+
+    <div class="field">
+      <%= f.label :TeamID %>
+      <%= f.collection_select :TeamID, Team.all, :id, :Name %>
+    </div>
+
+    <div class="field">
+      <%= f.label :RoleID %>
+      <%= f.collection_select :RoleID, Role.all, :id, :Title %>
+    </div>
 
   <div class="actions">
     <%= f.submit "Sign up" %>
