@@ -4,6 +4,21 @@ class Ability
   #https://github.com/CanCanCommunity/cancancan
 
   def initialize(user)
+
+    user ||=User.new
+    if user.roles.Title.equal? "Admin"
+      can :manage, :all
+    elsif user.roles.Title.equal? "Coach"
+      can :manage, [Question, User, Playlist, BookPlaylist]
+      can :read, [Book, Year]
+      can :update, Team
+    elsif user.roles.Title.equal? "Student"
+      can :read, Book
+      can :create, Question
+    else
+      can :read, Book
+    end
+
     # Define abilities for the passed in user here. For example:
     #
     #   user ||= User.new # guest user (not logged in)

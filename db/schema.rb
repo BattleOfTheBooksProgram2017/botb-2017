@@ -61,6 +61,7 @@ ActiveRecord::Schema.define(version: 20170419121223) do
     t.text     "Question",   limit: 65535
     t.integer  "BookID"
     t.integer  "TeamID"
+    t.boolean  "isApproved"
     t.integer  "createdBy"
     t.integer  "updatedBy"
     t.datetime "created_at",               null: false

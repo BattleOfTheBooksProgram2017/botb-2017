@@ -4,6 +4,7 @@ class CreateQuestions < ActiveRecord::Migration[5.0]
       t.text :Question
       t.integer :BookID
       t.integer :TeamID
+      t.boolean :isApproved
       t.integer :createdBy
       t.integer :updatedBy
 
