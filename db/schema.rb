@@ -94,6 +94,7 @@ ActiveRecord::Schema.define(version: 20170407164002) do
 
   create_table "years", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "Year"
+    t.boolean  "isActive"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

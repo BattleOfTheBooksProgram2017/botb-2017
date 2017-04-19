@@ -19,9 +19,9 @@ Team.create(Name: 'Wildcats', School: 'Clayton Park Junior High', LevelID: 1)
 Team.create(Name: 'Lions', School: 'Fairview Junior High', LevelID: 1)
 #Team.create(Name: 'D\'uc Danville', School: 'D\'uc Danville')
 
-Year.create(Year: 2018)
-Year.create(Year: 2017)
-Year.create(Year: 2016)
+Year.create(Year: 2018, isActive: 0)
+Year.create(Year: 2017, isActive: 1)
+Year.create(Year: 2016, isActive: 0)
 
 #Book.create(Title: 'something', Author: 'someone', Genre: 'genred', CoverImage: 'http://sdsds', Details: 'This book is about', YearID: 2, LevelID: 1)
 

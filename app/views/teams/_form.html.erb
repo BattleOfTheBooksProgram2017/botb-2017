@@ -21,6 +21,11 @@
     <%= f.text_field :School %>
   </div>
 
+    <div class="field">
+      <%= f.label :LevelID %>
+      <%= f.collection_select :LevelID, Level.all, :id, :LevelName %>
+    </div>
+
   <div class="actions">
     <%= f.submit %>
   </div>
