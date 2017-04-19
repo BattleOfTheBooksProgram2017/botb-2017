@@ -9,7 +9,8 @@ class Ability
     if user.roles.Title.equal? "Admin"
       can :manage, :all
     elsif user.roles.Title.equal? "Coach"
-      can :manage, [Question, User, Playlist, BookPlaylist]
+      can :manage, [Question, Playlist, BookPlaylist]
+      can :create, [User]
       can :read, [Book, Year]
       can :update, Team
     elsif user.roles.Title.equal? "Student"

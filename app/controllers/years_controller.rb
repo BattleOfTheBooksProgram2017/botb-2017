@@ -25,6 +25,7 @@ class YearsController < ApplicationController
   # POST /years.json
   def create
     @year = Year.new(year_params)
+    @year.isActive = false
 
     respond_to do |format|
       if @year.save
