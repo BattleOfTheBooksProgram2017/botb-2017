@@ -98,5 +98,21 @@ li a:hover {
 }
 
 .timerRed {
-  color: #ef2828;
+  text-shadow: 5px 5px 5px #ef2828;
+}
+
+#battleLabel, h2 {
+font-size: 3em;
+  font-style: italic;
+  text-shadow: 2px 2px 2px white;
+}
+#questionLabel, #answerLabel{
+  font-size: 3em;
+  text-decoration: underline;
+  font-style:italic;
+  text-shadow: 2px 2px 2px white;
+
+}
+#question, #title, #author{
+  font-size: 5em;
 }

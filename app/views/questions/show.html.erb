@@ -7,6 +7,13 @@
 <p>Created At: <%= @question.created_at %></p>
 <p>Updated By: <%= @updatedBy.Name %></p>
 <p>Updated At: <%= @question.updated_at %></p>
+<p>Approved Status:
+<% if @question.isApproved %>
+    Approved
+<% else %>
+    Not Approved
+<% end %>
+</p>
 
 <%= link_to 'Edit', edit_question_path(@question) %> |
 <%= link_to 'Back', questions_path %>

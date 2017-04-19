@@ -1,4 +1,14 @@
-<h1>Battle!</h1>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Battle</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+</head>
+<body>
+<h1 id="battleLabel">Battle!</h1>
 <!--<p>Find me in app/views/battle/battle.html.erb</p>-->
 
 <div id="questions" class="hideMe">
@@ -12,104 +22,124 @@
 
   <input type="hidden" id="questionIndex" />
 
-  <h3>Question #<span class="questionNumber"></span>- <span id="question"></span></h3>
+  <h3 id="questionLabel">Question #<span class="questionNumber"></span>:</h3>
+  <br />
+  <span id="question"></span>
   <h2 id="timer"></h2>
   <button id="displayAnswer">Answer</button>
 
 </div>
 
+<div id="endMsg" class="hideMe">
+  <h2 style="text-shadow: 2px 2px 2px white; font-style:italic;">Congratulations! You have completed this round of questions!</h2>
+</div>
+
 <div id="showAnswer" class="hideMe">
-  <h5>Answer #<span class="questionNumber"></span></h5>
+  <h3 id="answerLabel">Answer #<span class="questionNumber"></span>:</h3>
   <h3 id="title"></h3>
   <h4 id="author"></h4>
   <button id="nextQuestion">Next Question</button>
 </div>
 
+<div id="tryAgain" class="hideMe">
+  <p><%= link_to('Try another battle!', battle_index_path) %></p>
+</div>
+
 <!--<script src="assets/javascripts/battle.js" type="javascript"></script>-->
 <script>
-  function nextQuestion(questions, books, questionIndex)
-  {
-    question = questions[questionIndex];
-    book = books[questionIndex];
-    qIndex = questionIndex * 1;
-    qIndex = qIndex + 1;
+    function nextQuestion(questions, books, questionIndex)
+    {
+        question = questions[questionIndex];
+        book = books[questionIndex];
+        qIndex = questionIndex * 1;
+        qIndex = qIndex + 1;
 
-    $("#questionIndex").val(qIndex);
-    $("#question").html(question.Question);
-    $("#title").html(book.Title);
-    $("#author").html(book.Author);
-    $(".questionNumber").html(qIndex);
-  }
+        $("#questionIndex").val(qIndex);
+        $("#question").html(question.Question);
+        $("#title").html("Book: " + book.Title);
+        $("#author").html("Author: " + book.Author);
+        $(".questionNumber").html(qIndex);
+    }
 
-  $(document).ready(function(){
+    $(document).ready(function(){
 
-    var questions = $("#questions").html();
-    questions = JSON.parse(questions);
+        var questions = $("#questions").html();
+        questions = JSON.parse(questions);
 
-    var books = $("#books").html();
-    books = JSON.parse(books);
+        var books = $("#books").html();
+        books = JSON.parse(books);
 
-    $("#displayAnswer").click(function(){
+        $("#displayAnswer").click(function(){
 
-      $("#showAnswer").removeClass("hideMe");
-      $("#askQuestion").addClass("hideMe");
+            $("#showAnswer").removeClass("hideMe");
+            $("#askQuestion").addClass("hideMe");
+
+        });
+
+        $("#nextQuestion").click(function(){
+
+            qIndex = $("#questionIndex").val();
+
+            if(qIndex < questions.length)
+            {
+                $("#showAnswer").addClass("hideMe");
+                $("#askQuestion").removeClass("hideMe");
+                nextQuestion(questions, books, qIndex);
+                t = new Timer();
+                t.init();
+            }
+            else
+            {
+                $("#showAnswer").addClass("hideMe");
+                $("#askQuestion").addClass("hideMe");
+                $("#endMsg").removeClass("hideMe");
+                $("#tryAgain").removeClass("hideMe");
+
+            }
+
+        });
+
+        nextQuestion(questions, books, 0)
 
     });
-
-    $("#nextQuestion").click(function(){
-
-      qIndex = $("#questionIndex").val();
-
-      if(qIndex < questions.length)
-      {
-        $("#showAnswer").addClass("hideMe");
-        $("#askQuestion").removeClass("hideMe");
-        nextQuestion(questions, books, qIndex);
-        t = new Timer();
-        t.init();
-      }
-      else
-      {
-        alert("Done all questions");
-      }
-
-    });
-
-    nextQuestion(questions, books, 0)
-
-  });
 </script>
 
 <!--javascript for timer-->
 <script>
-  function Timer() {
-    const TIME_LENGTH = 2*60 + 30;
+    function Timer() {
+        const TIME_LENGTH = 60 + 30;
 //    const TIME_LENGTH = 3;
-    this.clock = TIME_LENGTH;
-    this.timeout = false;
-    this.show = function() { showClock(); };
-    this.init = function() {
-      clock = TIME_LENGTH;
-      showClock();
-    }
-    this.down1second = function() {
-      if (this.clock>0) this.clock--;
-      showClock();
-      if (clock<=0) {
-        $("#timer").text("Time is up!");
-        $("#timer").addClass("timerRed");
-      }
+        this.clock = TIME_LENGTH;
+        this.timeout = false;
+        this.show = function() { showClock(); };
+        this.init = function() {
+            clock = TIME_LENGTH;
+            showClock();
+        }
+        this.down1second = function() {
+            if (this.clock>0) this.clock--;
+            showClock();
+            if (clock<=30) {
+                $("#timer").addClass("timerRed");
+            } else if (clock<=0) {
+                $("#timer").text("Time is up!");
+
+            }
+        }
+
+        function showClock() {
+            $("#timer").text(Math.trunc(clock/60) + ":" + (clock%60));
+            $("#timer").removeClass("timerRed");
+        }
     }
 
-    function showClock() {
-      $("#timer").text(Math.trunc(clock/60) + ":" + (clock%60));
-      $("#timer").removeClass("timerRed");
-    }
-  }
-
-  $(document).ready(function(){
-    t= new Timer();
-    t.init();
-    setInterval(t.down1second, 1000);
-  });
+    $(document).ready(function(){
+        t= new Timer();
+        t.init();
+        setInterval(t.down1second, 1000);
+    });
 </script>
+
+
+</body>
+</html>
