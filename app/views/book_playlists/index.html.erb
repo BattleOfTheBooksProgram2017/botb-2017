@@ -2,21 +2,33 @@
 
 <h1>Book Playlists</h1>
 
-<table>
+<table class="table table-bordered table-striped">
   <thead>
-    <tr>
-      <th colspan="3"></th>
-    </tr>
+  <tr>
+    <th>Created At</th>
+    <th>Updated At</th>
+    <th>Book</th>
+    <th>Team</th>
+    <th colspan="3">Actions</th>
+
+  </tr>
   </thead>
 
   <tbody>
-    <% @book_playlists.each do |book_playlist| %>
+  <% @book_playlists.each do |book_playlist| %>
       <tr>
+
+        <td><%= book_playlist.created_at %></td>
+        <td><%= book_playlist.updated_at %></td>
+        <td><%= book_playlist.book.Title %></td>
+        <td><%= book_playlist.playlist.team.Name %></td>
+
+
         <td><%= link_to 'Show', book_playlist %></td>
         <td><%= link_to 'Edit', edit_book_playlist_path(book_playlist) %></td>
         <td><%= link_to 'Destroy', book_playlist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
+  <% end %>
   </tbody>
 </table>
 

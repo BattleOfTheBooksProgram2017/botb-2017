@@ -53,8 +53,11 @@ ActiveRecord::Schema.define(version: 20170419121223) do
   end
 
   create_table "playlists", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "team_id"
+    t.index ["team_id"], name: "index_playlists_on_team_id", using: :btree
   end
 
   create_table "questions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -110,4 +113,5 @@ ActiveRecord::Schema.define(version: 20170419121223) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "playlists", "teams"
 end

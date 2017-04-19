@@ -26,6 +26,7 @@ class PlaylistsController < ApplicationController
   def create
     @playlist = Playlist.new(playlist_params)
 
+
     respond_to do |format|
       if @playlist.save
         format.html { redirect_to @playlist, notice: 'Playlist was successfully created.' }
@@ -69,6 +70,6 @@ class PlaylistsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def playlist_params
-      params.fetch(:playlist, {})
+      params.require(:playlist).permit(:title, :team_id)
     end
 end

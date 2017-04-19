@@ -83,11 +83,11 @@ Book.create(Title: "The Museum of Intangible Things", Author: "Wendy Wunder", Ge
 
 #User.create(Name: "Laura Nelson", UserName: "lowercase", email: "W0291149@nscc.ca", TeamID: 2, RoleID: 2)
 
-User.create(Name: "Laura Nelson", UserName: "lowercase", email: "W0291149@nscc.ca", TeamID: 2, RoleID: 2, password: "password")
-User.create(Name: "Eric Pascher", UserName: "pasche", email: "W0291149@nscc.ca", TeamID: 1, RoleID: 1, password: "password")
-User.create(Name: "Jason Chen", UserName: "json", email: "W0291149@nscc.ca", TeamID: 1, RoleID: 3, password: "password")
-User.create(Name: "Jeremy Stone", UserName: "thejman", email: "W0291149@nscc.ca", TeamID: 2, RoleID: 1, password: "password")
-User.create(Name: "May Mohammed", UserName: "maym", email: "W0291149@nscc.ca", TeamID: 2, RoleID: 2, password: "password")
+# User.create(Name: "Laura Nelson", UserName: "lowercase", email: "W0291149@nscc.ca", TeamID: 2, RoleID: 2, password: "password")
+# User.create(Name: "Eric Pascher", UserName: "pasche", email: "W0291149@nscc.ca", TeamID: 1, RoleID: 1, password: "password")
+# User.create(Name: "Jason Chen", UserName: "json", email: "W0291149@nscc.ca", TeamID: 1, RoleID: 3, password: "password")
+# User.create(Name: "Jeremy Stone", UserName: "thejman", email: "W0291149@nscc.ca", TeamID: 2, RoleID: 1, password: "password")
+# User.create(Name: "May Mohammed", UserName: "maym", email: "W0291149@nscc.ca", TeamID: 2, RoleID: 2, password: "password")
 
 
 #Question.create(Question: 'sjdsj', BookID: 1, TeamID: 2, createdBy: 3, updatedBy: 3)
