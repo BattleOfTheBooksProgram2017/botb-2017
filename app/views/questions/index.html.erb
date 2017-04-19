@@ -8,7 +8,61 @@
 
 <br/>
 <hr/>
-<br/>
+
+<% if @pending.size > 0 %>
+  <br/>
+
+  <h4>Pending Questions</h4>
+
+  <div class="pagination">
+    <%= will_paginate @pending %>
+  </div>
+
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Question</th>
+      <th>Book Title</th>
+      <th>Book Author</th>
+      <th>Team School</th>
+      <th>Team Name</th>
+      <th>Created At</th>
+      <th>Updated At</th>
+      <th colspan="3">Actions</th>
+    </tr>
+    </thead>
+
+    <!--#Question.create(Question: 'sjdsj', BookId: 1, TeamId: 2, CreatedBy: 3, UpdatedBy: 3)-->
+    <!--http://stackoverflow.com/questions/15625947/how-do-i-format-datetime-in-rails-->
+    <!--http://rorguide.blogspot.ca/2011/02/date-time-formats-in-ruby-on-rails.html-->
+
+    <tbody>
+    <% @pending.each do |question| %>
+        <tr>
+          <td><%= question.id %></td>
+          <td><%= question.Question %></td>
+          <td><%= question.book.Title %></td>
+          <td><%= question.book.Author %></td>
+          <td><%= question.created_at.strftime("%A, %B %e, %Y at %H:%M %Z") %></td>
+          <td><%= link_to 'Show', question %></td>
+          <td><%= link_to 'Edit', edit_question_path(question) %></td>
+          <td><%= link_to 'Destroy', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+    <br/>
+    <hr/>
+
+<% end %>
+
+<h4>Approved Questions</h4>
+
+<div class="pagination">
+  <%= will_paginate @approved %>
+</div>
 
 <table class="table table-bordered table-striped">
   <thead>
@@ -30,7 +84,7 @@
   <!--http://rorguide.blogspot.ca/2011/02/date-time-formats-in-ruby-on-rails.html-->
 
   <tbody>
-    <% @questions.each do |question| %>
+    <% @approved.each do |question| %>
       <tr>
         <td><%= question.id %></td>
         <td><%= question.Question %></td>

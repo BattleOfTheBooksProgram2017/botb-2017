@@ -20,13 +20,13 @@
 
 <!--http://guides.rubyonrails.org/form_helpers.html#making-select-boxes-with-ease-->
       <div class="field">
-        <%= f.label :BookID %>
+        <%= f.label(:BookID, "Book") %>
         <%= f.collection_select :BookID, Book.all, :id, :Title %>
       </div>
 
 
       <div class="field">
-        <%= f.label :TeamID %>
+        <%= f.label(:TeamID, "Team") %>
         <%= f.collection_select :TeamID, Team.all, :id, :Name %>
       </div>
 
@@ -40,9 +40,6 @@
         <%= f.label :updatedBy %>
         <%= f.text_field :updatedBy %>
       </div>
-
-
-
 
 
       <div class="actions">

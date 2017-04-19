@@ -5,7 +5,9 @@ class QuestionsController < ApplicationController
   # GET /questions.json
   def index
     # http://stackoverflow.com/questions/15060479/multiple-where-conditions-in-rails
-    @questions = Question.all#.where(TeamID: 2)
+    # @questions = Question.all#.where(TeamID: 2)
+    @approved = Question.all.where(isApproved: true).paginate(:page => params[:page], :per_page => 10)
+    @pending = Question.all.where(isApproved: false).paginate(:page => params[:page], :per_page => 10)
   end
 
   # def howmanyquestions
@@ -53,6 +55,7 @@ class QuestionsController < ApplicationController
   # POST /questions.json
   def create
     @question = Question.new(question_params)
+    @question.isApproved = false
 
     #@question.book = Book.find(params[:BookID])
     #@question.team = Team.find(params.fetch(:TeamID))
@@ -74,7 +77,7 @@ class QuestionsController < ApplicationController
   # PATCH/PUT /questions/1.json
   def update
     respond_to do |format|
-      if @question.update(question_params)
+      if @question.update(update_question_params)
         format.html { redirect_to @question, notice: 'Question was successfully updated.' }
         format.json { render :show, status: :ok, location: @question }
       else
@@ -103,5 +106,9 @@ class QuestionsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def question_params
       params.require(:question).permit(:Question, :BookID, :TeamID, :createdBy, :updatedBy)
+    end
+
+    def update_question_params
+      params.require(:question).permit(:Question, :BookID, :updatedBy, :isApproved)
     end
 end

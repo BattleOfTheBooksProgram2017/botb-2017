@@ -1,6 +1,54 @@
 <h1>Editing Question</h1>
 
-<%= render 'form', question: @question %>
+<%= form_for(@question) do |f| %>
+    <% if @question.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(question.errors.count, "error") %> prohibited this question from being saved:</h2>
+
+          <ul>
+            <% @question.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label :Question %>
+      <%= f.text_field :Question %>
+    </div>
+
+
+    <!--http://guides.rubyonrails.org/form_helpers.html#making-select-boxes-with-ease-->
+    <div class="field">
+      <%= f.label :BookID %>
+      <%= f.collection_select :BookID, Book.all, :id, :Title %>
+
+    </div>
+
+    <div class="field">
+
+      <%= f.label :updatedBy %>
+      <%= f.text_field :updatedBy %>
+    </div>
+
+    <!--http://guides.rubyonrails.org/form_helpers.html#helpers-for-generating-form-elements-->
+
+    <div class="field">
+      <%= f.check_box(:isApproved) %>
+      <%= f.label(:isApproved, "Approve This Question") %>
+    </div>
+
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+
+
+
+
+
+<% end %>
 
 <%= link_to 'Show', @question %> |
 <%= link_to 'Back', questions_path %>
